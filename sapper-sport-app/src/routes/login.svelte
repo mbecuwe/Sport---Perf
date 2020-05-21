@@ -33,14 +33,8 @@
 </style>
 
 <svelte:head>
-	<title>Sapper project template</title>
+	<title>Login page</title>
 </svelte:head>
 
-<h1 class="bg-blue-300">Great success!</h1>
 
-<figure>
-	<img alt='Success Kid' src='successkid.jpg'>
-	<figcaption class="bg-blue-100">Have fun with Sapper!</figcaption>
-</figure>
 
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
