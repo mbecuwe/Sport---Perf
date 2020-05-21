@@ -33,8 +33,7 @@
 </style>
 
 <svelte:head>
-	<title>Sport Performance</title>
+	<title >Tutorial</title>
 </svelte:head>
 
-<h1>Check your performance!</h1>
-
+<h1>Provide link to video tutorial ?</h1>

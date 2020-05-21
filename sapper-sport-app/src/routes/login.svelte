@@ -33,8 +33,54 @@
 </style>
 
 <svelte:head>
-	<title>Login page</title>
+	<title >Login page</title>
 </svelte:head>
 
+<body class="bg-white">
+	<div class="bg-blue-100 w-screen h-screen">
+		<div class="container mx-auto h-full flex justify-center items-center">
+			<div>
+			<h1 class="font-bold text-2xl tracking-wide text-blue-800 text-center mb-4">Login to App</h1>
+				<div class="bg-white rounded-lg shadow-lg m-2 p-5 mb-4 border-2 border-blue-200">
+					<form method="POST" > 
+					<!-- J'ai du enlever des choses ici: action="{{ url('/login') }}"-->
+						<div class="mb-2">
+							<label for="email" class="text-gray-600">Enter your Email</label><br>
+							<input id="email" placeholder="Email Address" type="email" name="email"  required autofocus class="bg-blue-100 border-gray-200 border">
+						</div>
 
+						<div class="my-2" >                                
+							<label for="password" class="text-gray-600">Enter your Password</label><br>
+							<input id="password" placeholder="Password" type="password" name="password" required class="bg-blue-100 border-gray-200 border"> 
+						</div>
 
+						<div class="mt-2">
+							<label class="checkbox text-gray-600">
+								<input type="checkbox" name="remember"> Remember Me
+								<!-- idem "-->
+							</label>
+						</div>
+						
+						<div class="flex justify-center mt-4">
+							<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-6 rounded-full m-2">
+								Login
+							</button>
+						</div>
+					</form>
+				</div>
+				<div class="flex justify-center flex-1 text-gray-400">
+					<div >
+						<a href="">Sign up </a>
+					</div>
+					<div class="mx-2">
+						<a href="">Password lost</a>
+					</div>
+
+					<div class=>
+						<a href="">Contact</a>
+					</div>
+            	</div>
+			</div>
+		</div>
+	</div>
+</body>

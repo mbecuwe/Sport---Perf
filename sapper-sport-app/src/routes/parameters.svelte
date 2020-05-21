@@ -33,8 +33,5 @@
 </style>
 
 <svelte:head>
-	<title>Sport Performance</title>
+	<title >Parameters</title>
 </svelte:head>
-
-<h1>Check your performance!</h1>
-
