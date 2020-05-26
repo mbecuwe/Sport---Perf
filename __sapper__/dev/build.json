@@ -1,0 +1,28 @@
+{
+  "bundler": "rollup",
+  "shimport": "1.0.1",
+  "assets": {
+    "main": "client.055bf11f.js"
+  },
+  "css": {
+    "main": "main.1286952136.css",
+    "chunks": {
+      "index.svelte": [],
+      "frappe-charts.svelte": [],
+      "new_session.svelte": [],
+      "performance.svelte": [],
+      "sport_list/index.svelte": [],
+      "sport_list/[slug].svelte": [],
+      "chartest.svelte": [],
+      "sports/cycling/cycling-charts.svelte": [],
+      "sports/cycling/cycling.svelte": [],
+      "sports/running/running.svelte": [],
+      "sports/workout/workout.svelte": [],
+      "about.svelte": [],
+      "chart.svelte": [],
+      "blog/index.svelte": [],
+      "blog/[slug].svelte": [],
+      "Box.svelte": []
+    }
+  }
+}
