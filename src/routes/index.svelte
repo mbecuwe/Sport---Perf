@@ -30,8 +30,8 @@
 <h1 class='bg-blue-100'>Please log in!</h1>
 
 
-<p>{addCustomSport('yes')}</p>
+<!-- <p>{addCustomSport('yes')}</p> -->
 
-<p>{test('yes')}</p>
+<!-- <p>{test('yes')}</p> -->
 
-<ChartJS/>
+<!-- <ChartJS/> -->

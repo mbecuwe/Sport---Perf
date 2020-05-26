@@ -8,7 +8,7 @@ export let data;
 export function createChart(){
   var ctx = document.getElementById('myChart');
     var myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: data,
         options: {
             scales: {
