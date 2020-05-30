@@ -1,4 +1,4 @@
-
+<!-- 
 <canvas id="myChart" width="2" height="1"></canvas>
 
 <script>
@@ -22,4 +22,4 @@ export function createChart(){
     });
   }
 onMount(createChart)
-</script>
+</script> -->

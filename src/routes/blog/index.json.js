@@ -1,16 +1,14 @@
-import posts from './_posts.js';
+import {init} from '@lib/mongo'
 
-const contents = JSON.stringify(posts.map(post => {
-	return {
-		title: post.title,
-		slug: post.slug
-	};
-}));
 
-export function get(req, res) {
+export async function get(req, res) {
+	
+	const {db} = await init();
+	const posts = await db.collection("test2_collection").find({}).toArray();
+	
 	res.writeHead(200, {
 		'Content-Type': 'application/json'
 	});
 
-	res.end(contents);
+	res.end(JSON.stringify(posts));
 }
