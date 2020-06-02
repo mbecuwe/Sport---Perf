@@ -34,3 +34,8 @@
 <p>Radar chart of sports</p>
 
 <p>Calendar of last sessions</p>
+
+
+<p>Options pour supprimer des données de la base en cas d'erreur</p>
+
+<p>Login / authenthification https://www.nielsvandermolen.com/signup-form-html5-validation-svelte/</p>

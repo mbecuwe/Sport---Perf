@@ -2,13 +2,14 @@
   "bundler": "rollup",
   "shimport": "1.0.1",
   "assets": {
-    "main": "client.3e46cb85.js"
+    "main": "client.be9fe49d.js"
   },
   "css": {
-    "main": "main.796443257.css",
+    "main": "main.1850128364.css",
     "chunks": {
       "index.svelte": [],
       "frappe-charts.svelte": [],
+      "new_sessions/new_cycling.svelte": [],
       "new_session.svelte": [],
       "performance.svelte": [],
       "sport_list/index.svelte": [],
