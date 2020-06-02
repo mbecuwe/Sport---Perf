@@ -1,4 +1,4 @@
-<script context="module">
+<!-- <script context="module">
 	export function preload({ params, query }) {
 		return this.fetch(`sport_list.json`).then(r => r.json()).then(sports => {
 			return { sports };
@@ -29,8 +29,8 @@
 				tell Sapper to load the data for the page as soon as
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event -->
-		<li><a rel='prefetch' href='sport_list/{sport.slug}'>{sport.title}</a></li>
+		<!-- <li><a rel='prefetch' href='sport_list/{sport.slug}'>{sport.title}</a></li>
 	{/each}
 </ul>
 
-<a href='chart'>yep</a>
+<a href='chart'>yep</a> --> -->

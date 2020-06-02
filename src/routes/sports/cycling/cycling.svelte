@@ -1,35 +1,235 @@
+
+<script context="module">
+	export function preload({ params, query }) {
+		return this.fetch(`sports/cycling.json`).then(r => r.json()).then(data_raw => {
+			return { data_raw };
+		});
+	}	
+    
+
+</script>
+
 <script>
     import Charts from './cycling-charts.svelte'
-    import datas from './cycling-data.js'
-    let data = datas
+    export let data_raw
+
+
+// Compute data for charts
+
+    let list_meters = [];
+    let list_date = [];
+    let list_elevation = [];
+    let list_minutes = [];
+
+    data_raw.forEach(x => {
+        list_meters.push(x.meters)
+        list_date.push(x.date)
+        list_elevation.push(x.elevation)
+        list_minutes.push(x.minutes)
+    })
+
+    export const data = {
+    labels: list_date,
+    datasets: [{
+        label: 'Meters covered',
+        yAxisID : 'Meters covered',
+        data:list_meters,
+        borderColor: "#3e95cd",
+        fill: false
+    },
+    {
+        label: 'elevation',
+        data:list_elevation,
+        yAxisID : 'elevation',
+        borderColor: "#8e5ea2",
+        fill: false
+    }]
+}
+
+// TODO: verifiy ordering of dates and sessions
+
+const average = arr => arr.reduce( ( p, c ) => p + c, 0 ) / arr.length;
+
+
+// TODO: right now including last session, probably should not
+
+// TODO: colors green or red for variations
+function get_last_nb_sessions(int, list){
+    return list.slice(Math.max(list.length - int, 0))
+}
+
+function dividevector(a,b){
+    return a.map((e,i) => e / b[i]);
+}
+
+function variation(x_new, x_old){
+    const variation = Math.round((x_new-x_old)/x_old*100)
+    return variation
+}
+
+function round_1_decimal(float){
+    return Math.round(float * 10) /10
+}
+
+function round_2_decimal(float){
+    return Math.round(float * 100) / 100
+}
+
+// Compute average distance, speed, elevation, 
+// Last session
+const last_distance = list_meters[list_meters.length-1]
+const last_hours = list_minutes[list_minutes.length-1]/60
+const last_speed = last_distance/1000/last_hours
+const last_elevation = list_elevation[list_elevation.length-1]
+
+
+// Last 3 sessions
+//const distance_3_session = list_meters.slice(Math.max(list_meters.length - 3, 0))
+
+const distance_3_session = get_last_nb_sessions(3, list_meters)
+const minutes_3_session = get_last_nb_sessions(3, list_minutes)
+const elevation_3_session = get_last_nb_sessions(3, list_elevation)
+const date_3_session = get_last_nb_sessions(3, list_date)
+
+
+
+const average_3_distance = average(distance_3_session)
+const average_3_elevation = average(elevation_3_session)
+const average_3_speed = average(dividevector(distance_3_session , minutes_3_session)) * 60/1000  
+
+const variation_3_distance = variation(last_distance, average_3_distance)
+const variation_3_speed = variation(last_speed, average_3_speed)
+const variation_3_elevation = variation(last_elevation, average_3_elevation)
+
+// Last 10 sessions
+const distance_10_session = get_last_nb_sessions(10, list_meters)
+const minutes_10_session = get_last_nb_sessions(10, list_minutes)
+const elevation_10_session = get_last_nb_sessions(10, list_elevation)
+
+const average_10_distance = average(distance_10_session)
+const average_10_elevation = average(elevation_10_session)
+const average_10_speed = average(dividevector(distance_10_session , minutes_10_session)) * 60/1000
+
+const variation_10_distance = variation(last_distance, average_10_distance)
+const variation_10_speed = variation(last_speed, average_10_speed)
+const variation_10_elevation = variation(last_elevation, average_10_elevation)
+
+const nb_displayed = 3
+
+
+
 </script>
+
 
 <style>
 
-
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
-
-
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
 </style>
 
-<div style="float:left">Cycling</div>
-<div style="float:right"><img src="data:image/jpeg;base64,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">
+<div class="flex h-48">
+  <div class="flex-initial w-2/3 p-2">
+    <div class="text-center p-2 text-2xl font-semibold bg-gray-100">
+    Cycling Performance
+    </div>
+  </div>
+  <div class="flex-initial w-1/3 p-2">
+    <div class=" text-right p-2">
+    <img src="cycling.jpg" alt="cycling">
+    </div>
+  </div>
 </div>
-<div style="clear:both"/>
+
+
+<div class='px-10'>
+Your last sessions took place on: 
+    <lu>
+    {#each get_last_nb_sessions(3, list_date) as date}
+    <li>{date}</li>
+    {/each}
+    </lu>
+</div>
+
+
+<div class='p-10'>
+    <table class="table-auto text-center ">
+    <thead>
+        <tr>
+        <th class="px-4 py-2">Metrics</th>
+        <th class="px-4 py-2">Value</th>
+        <th colspan=2 class="px-4 py-2 ">vs. Last 3 sessions</th>
+        <th colspan=2 class="px-4 py-2">vs. Last 10 sessions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td class="border px-4 py-2">Distance (m)</td>
+        <td class="border px-4 py-2">{last_distance}</td>
+        <td class="border px-4 py-2">{Math.round(average_3_distance)}</td>
+        <td class="border px-4 py-2">{variation_3_distance}%</td>
+        <td class="border px-4 py-2">{round_2_decimal(average_10_distance)}</td>
+        <td class="border px-4 py-2">{variation_10_distance}%</td>
+        </tr>
+        <tr class="bg-gray-100">
+        <td class="border px-4 py-2">Speed (km/h)</td>
+        <td class="border px-4 py-2">{round_2_decimal(last_speed)}</td>
+        <td class="border px-4 py-2">{round_2_decimal(average_3_speed)}</td>
+        <td class="border px-4 py-2">{variation_3_speed}%</td>
+        <td class="border px-4 py-2">{round_2_decimal(average_10_speed)}</td>
+        <td class="border px-4 py-2">{variation_10_speed}%</td>
+        </tr>
+        <tr>
+        <td class="border px-4 py-2">Elevation</td>
+        <td class="border px-4 py-2">{last_elevation}</td>
+        <td class="border px-4 py-2">{round_2_decimal(average_3_elevation)}</td>
+        <td class="border px-4 py-2">{variation_3_elevation}%</td>
+        <td class="border px-4 py-2">{round_2_decimal(average_10_elevation)}</td>
+        <td class="border px-4 py-2">{variation_10_elevation}%</td>
+ 
+        </tr>
+    </tbody>
+    </table>
+</div>
 
 
 
-<!-- <h1>Cycling</h1> -->
-<h1>First chart</h1>
-<Charts {data} />
+<div class='px-10 py-5'>
+Get the data available in table
+
+    <div class='py-5'>
+        <table class="table-auto text-center ">
+        <thead>
+            <tr>
+            <th class="px-4 py-2">Date</th>
+            <th class="px-4 py-2">Distance (m)</th>
+            <th class="px-4 py-2">Time (min)</th>
+            <th class="px-4 py-2">Speed (km/h)</th>
+            <th class="px-4 py-2">Elevation (m)</th>
+            
+            </tr>
+        </thead>
+
+        <tbody>
+        
+            {#each distance_3_session as distance, i}
+            <tr>
+            <td class="border px-4 py-2">{date_3_session[i]}</td>
+            <td class="border px-4 py-2">{distance}</td>
+            <td class="border px-4 py-2">{minutes_3_session[i]}</td>
+            <td class="border px-4 py-2">{round_2_decimal((distance/1000) / (minutes_3_session[i]/60)) }</td>
+            <td class="border px-4 py-2">{elevation_3_session[i]}</td>
+            
+
+            </tr>
+            {/each}
+        </tbody>
+        </table>
+    </div>
+
+
+</div>
+
+
+<div class="px-10 py-5">
+	<h3 >See your evolution in this chart:</h3>
+     <Charts {data} /> 
+</div>
+

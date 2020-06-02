@@ -3,6 +3,7 @@
 		return this.fetch(`blog.json`).then(r => r.json()).then(posts => {
 			return { posts };
 		});
+		
 	}
 </script>
 

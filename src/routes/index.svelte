@@ -27,11 +27,10 @@
 	<title>Sport App - LogIn</title>
 </svelte:head>
 
-<h1 class='bg-blue-100'>Please log in!</h1>
+<p class='text-xl'>Logged in as Martin!</p>
 
+<p>Weight</p>
 
-<!-- <p>{addCustomSport('yes')}</p> -->
+<p>Radar chart of sports</p>
 
-<!-- <p>{test('yes')}</p> -->
-
-<!-- <ChartJS/> -->
+<p>Calendar of last sessions</p>

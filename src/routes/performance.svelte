@@ -1,7 +1,10 @@
 
-<script>
+<script context='module'>
 	import Box from './Box.svelte';
+
 </script>
+
+
 
 
 
@@ -10,7 +13,7 @@
     <div class="text-center  p-2">
 		<Box>
 			<a href='sports/cycling/cycling'>
-			Cycling
+			<p class=' font-bold pb-2'>Cycling</p>
 			<img src="cycling.jpg" alt="cycling">
 			</a>
 		</Box>
@@ -21,7 +24,7 @@
     <div class=" text-center p-2">
 		<Box>
 			<a href='sports/running/running'>
-			Running
+			<p class=' font-bold pb-2'>Running</p>
 			<img src="running.jpg" alt="running">
 			</a>
 		</Box>
@@ -32,7 +35,7 @@
     <div class=" text-center p-2">
 		<Box>
 		<a href='sports/workout/workout'>
-		<p>Work-out</p>
+		<p class=' font-bold pb-2'>Work-out</p>
 		<img src="workout.jpg" alt="workout">
 		</a>
 		</Box>
@@ -43,7 +46,7 @@
     <div class=" text-center p-2">
 		<Box>
 		<a href='sports/swimming/swimming'>
-		<p>Swimming</p>
+		<p class=' font-bold pb-2'>Swimming</p>
 		<img src="swimming.jpg" alt="swimming">
 		</a>
 		</Box>

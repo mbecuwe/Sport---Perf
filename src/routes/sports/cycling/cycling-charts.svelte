@@ -1,4 +1,3 @@
-<!-- 
 <canvas id="myChart" width="2" height="1"></canvas>
 
 <script>
@@ -12,14 +11,21 @@ export function createChart(){
         data: data,
         options: {
             scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
+                yAxes: 
+                [{
+        id: 'Meters covered',
+        position: 'left',
+      }, {
+        id: 'elevation',
+        position: 'right',
+        gridLines: {
+                   display: false
+               },
+      }]
+
             }
         }
     });
   }
 onMount(createChart)
-</script> -->
+</script>

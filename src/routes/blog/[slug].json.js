@@ -1,4 +1,4 @@
-import posts from './_posts.js';
+//import posts from './_posts.js';
 import {init} from '@lib/mongo';
 
 

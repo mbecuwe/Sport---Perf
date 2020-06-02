@@ -1,4 +1,4 @@
-
+<!-- 
 
 
 
@@ -67,4 +67,4 @@ import Charts from '../frappe-charts.svelte'
 <div class='content'>
 	{@html sport.html}
 </div>
-
+ -->

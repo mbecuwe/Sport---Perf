@@ -1,16 +1,16 @@
-import sports from './_sports.js';
+// import sports from './_sports.js';
 
-const contents = JSON.stringify(sports.map(sport => {
-	return {
-		title: sport.title,
-		slug: sport.slug
-	};
-}));
+// const contents = JSON.stringify(sports.map(sport => {
+// 	return {
+// 		title: sport.title,
+// 		slug: sport.slug
+// 	};
+// }));
 
-export function get(req, res) {
-	res.writeHead(200, {
-		'Content-Type': 'application/json'
-	});
+// export function get(req, res) {
+// 	res.writeHead(200, {
+// 		'Content-Type': 'application/json'
+// 	});
 
-	res.end(contents);
-}
+// 	res.end(contents);
+// }

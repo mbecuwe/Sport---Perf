@@ -2,10 +2,10 @@
   "bundler": "rollup",
   "shimport": "1.0.1",
   "assets": {
-    "main": "client.028ada18.js"
+    "main": "client.6fd1388f.js"
   },
   "css": {
-    "main": "main.3929155985.css",
+    "main": "main.1304886530.css",
     "chunks": {
       "index.svelte": [],
       "frappe-charts.svelte": [],
@@ -19,6 +19,7 @@
       "sports/swimming/swimming.svelte": [],
       "sports/cycling/cycling-charts.svelte": [],
       "sports/cycling/cycling.svelte": [],
+      "sports/running/running-charts.svelte": [],
       "sports/running/running.svelte": [],
       "sports/workout/workout.svelte": [],
       "about.svelte": [],

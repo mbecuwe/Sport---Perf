@@ -1,0 +1,31 @@
+<canvas id="myChart" width="2" height="1"></canvas>
+
+<script>
+import { onMount } from "svelte";
+import Chart from "chart.js";
+export let data; 
+export function createChart(){
+  var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: {
+            scales: {
+                yAxes: 
+                [{
+        id: 'Meters covered',
+        position: 'left',
+      }, {
+        id: 'Elevation',
+        position: 'right',
+        gridLines: {
+                   display: false
+               },
+      }]
+
+            }
+        }
+    });
+  }
+onMount(createChart)
+</script>

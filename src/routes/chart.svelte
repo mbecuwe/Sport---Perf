@@ -1,4 +1,4 @@
-<!-- <script>
+<!-- <!-- <script>
   import { onMount } from "svelte";
   import Chart from "chart.js";
   onMount(async () => {});
@@ -25,8 +25,8 @@
 <button on:click={renderChart}>Load</button> 
 <canvas id="myChart"></canvas> 
 
--->
-<canvas id="myChart" width="2" height="1"></canvas>
+<!-- -->
+<!-- <canvas id="myChart" width="2" height="1"></canvas>
 
 <script>
 import { onMount } from "svelte";
@@ -71,4 +71,4 @@ export function createChart(){
     });
   }
 onMount(createChart)
-</script>
+</script> --> --> -->

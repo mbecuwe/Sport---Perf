@@ -4,7 +4,7 @@
 		// this file is called [slug].svelte
 		const res = await this.fetch(`blog/${params.slug}.json`);
 		const data = await res.json();
-
+		console.log(data)
 		if (res.status === 200) {
 			return { post: data };
 		} else {
