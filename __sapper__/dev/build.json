@@ -2,10 +2,10 @@
   "bundler": "rollup",
   "shimport": "1.0.1",
   "assets": {
-    "main": "client.be9fe49d.js"
+    "main": "client.f3715abc.js"
   },
   "css": {
-    "main": "main.1850128364.css",
+    "main": "main.11093957.css",
     "chunks": {
       "index.svelte": [],
       "frappe-charts.svelte": [],
