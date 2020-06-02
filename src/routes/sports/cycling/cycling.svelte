@@ -124,15 +124,15 @@ const nb_displayed = 3
 <style>
 
 </style>
-<div class="">
-    <div class="mb-6">
-        <img src="cycling.jpg" alt="cycling" class="object-cover h-48 w-full shadow rounded-md">
+<div class="mb-20">
+    <div class="mb-6 shadow">
+        <img src="bycicle2.jpg" alt="cycling" class="object-cover h-48 w-full shadow rounded-md">
     </div>
 
 
-    <div class="flex justify-center mb-16 bg-blue-700 border-2 border-gray-300 shadow rounded-t-md">
-        <div class="text-center p-2 text-3xl text-blue-700 font-semibold bg-blue-100 px-8">
-            Cycling Performance - Overview
+    <div class="flex justify-center mb-16 bg-blue-700 border-2 border-gray-300 shadow-lg rounded-t-md">
+        <div class="text-center p-2 text-3xl text-blue-700 font-semibold bg-blue-100 px-8 tracking-widest">
+            Cycling Performance
         </div>
     </div>
 
@@ -148,9 +148,9 @@ const nb_displayed = 3
 
     <div class="divide-y mt-16">
         <h1 class="text-blue-800">Performance Tables</h1>
-        <div class='m-12'>
-            <table class="table-auto text-center ">
-            <caption class="font-semibold mb-4 mt-4 text-xl italic text-blue-700">Performance evolution of main metrics</caption>
+        <div class='m-12 container'>
+            <table class="table-auto text-center container mx-auto">
+            <caption class="font-semibold mb-4 mt-8 text-xl italic text-blue-700">Performance evolution of main metrics</caption>
             <thead>
                 <tr>
                 <th class="px-4 py-2">Metrics</th>
@@ -192,8 +192,8 @@ const nb_displayed = 3
 
 
         <div class='m-12'>
-            <table class="table-auto text-center ">
-            <caption class="font-semibold mb-4 mt-4 text-xl italic text-blue-700">Performance of last sessions</caption>
+            <table class="table-auto text-center container mx-auto">
+            <caption class="font-semibold mb-4 mt-8 text-xl italic text-blue-700">Performance of last sessions</caption>
             <thead>
                 <tr>
                 <th class="px-4 py-2">Date</th>
