@@ -1,4 +1,6 @@
 <script>
+	import FrappeChart from './frappe-charts.svelte'
+	import ChartJS from './chart.svelte'
 	import {addCustomSport, test} from './sport.js'
 </script>
 
@@ -32,13 +34,3 @@
 <p>Radar chart of sports</p>
 
 <p>Calendar of last sessions</p>
-
-TODO: verifiy ordering of dates and sessions
-
-
-
-TODO: right now including last session, probably should not
-
-TODO: liste des options bool avec les métriques qu'on veut observer (rythme cardiaque)
-
- TODO: colors green or red for variations

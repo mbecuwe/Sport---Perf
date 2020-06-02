@@ -1,2 +1,7 @@
+<!-- <script>
+import {init} from '@lib/mongo';
 
-<p>About us</p>>
+const {db} = await init();
+console.log('yoyo')
+</script> -->
+{console.log('yo')}

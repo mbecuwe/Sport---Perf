@@ -1,15 +1,3 @@
-
-
-<script>
-
-
-
-
-</script>
-
-
-
-
     <body class="bg-blue-100 w-screen h-screen">
         <div class="mx-5 my-5">
             <div class="md:flex justify-center">
