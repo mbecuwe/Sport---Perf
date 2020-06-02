@@ -32,50 +32,29 @@
        console.log(1)
        console.log(event.target);
        console.log(1)
-       console.log(event.target.email.value);
+       console.log(event.target.date.value);
        console.log(1)
-       console.log(event.target.password.value);
+       console.log(event.target.meters.value);
+       console.log(1)
+       console.log(event.target.minutes.value);
+       console.log(1)
+       console.log(event.target.elevation.value);
     }
 
    function validateMessageEmail(event) {
        let textbox = event.target;
        error_boolean = false;
        if (textbox.value === '') {
-            textbox.setCustomValidity('Required email address');
+            textbox.setCustomValidity('Number required');
         } else if (textbox.validity.typeMismatch){
             error_boolean = true;
-            textbox.setCustomValidity('please enter a valid email address');
+            textbox.setCustomValidity('please enter a valid input');
         } else {
            textbox.setCustomValidity('');
         }
         return true;
     }
 </script>
-
-
-
-<form
-    on:submit|preventDefault="{handleSubmit}"
-    on:invalid={validateMessageEmail}
-    on:changed={validateMessageEmail}
-    on:input={validateMessageEmail}
->
-  <label for="email">Email</label>
-  <input required type="number" id="email" />
-  {#if error_boolean}
-    <h1> OH NO! AN ERRROR!</h1>
-  {/if}
-
-  <label for="password">Password</label>
-  <input required type="number" id="password" />
-
-  <button type="submit">Create account</button>
-</form>
-
-
-
-
-
 
 
 <div class="flex h-48">
@@ -86,8 +65,55 @@
   </div>
   <div class="flex-initial w-1/3 p-2">
     <div class=" text-right p-2">
-    <img src="cycling.jpg" alt="cycling">
+   <img src="cycling.jpg" alt="cycling">
+    </div> 
+  </div>
+</div>
+
+
+
+<form
+    on:submit|preventDefault="{handleSubmit}"
+    on:invalid={validateMessageEmail}
+    on:changed={validateMessageEmail}
+    on:input={validateMessageEmail}
+>
+
+    <label for="date">Date</label>
+  <input required type="date" id="date" />
+
+  <label for="meters">Distance (m)</label>
+  <input required type="number" id="meters" />
+  <!-- {#if error_boolean}
+    <h1> OH NO! AN ERRROR!</h1>
+  {/if} -->
+
+
+  <label for="minutes">Minutes</label>
+  <input required type="number" id="minutes" />
+
+  <label for="elevation">Elevation (m)</label>
+  <input required type="number" id="elevation" />
+
+  <button type="submit">Create account</button>
+</form>
+
+
+
+
+<!-- 
+
+
+<div class="flex h-48">
+  <div class="flex-initial w-2/3 p-2">
+    <div class="text-center p-2 text-2xl font-semibold bg-gray-100">
+    Cycling New Session
     </div>
+  </div>
+  <div class="flex-initial w-1/3 p-2">
+    <div class=" text-right p-2">
+   <img src="cycling.jpg" alt="cycling">
+    </div> 
   </div>
 </div>
 
@@ -117,7 +143,7 @@
                     </datalist>
                 </div> -->
 
-
+<!-- 
                 <div class="pb-6">
                     <p class="pb-2">Meters</p>
                 <input type="number" id="meters" name="meters" class="shadow hover:shadow-md">    
@@ -136,7 +162,7 @@
             </div>
         </div>
 
-    </body> 
+    </body>  --> 
 
 <!-- Check that all inputs are provided : -->
 
