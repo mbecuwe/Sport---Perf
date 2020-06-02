@@ -53,7 +53,11 @@ const average = arr => arr.reduce( ( p, c ) => p + c, 0 ) / arr.length;
 
 // TODO: right now including last session, probably should not
 
+// TODO: liste des options bool avec les métriques qu'on veut observer (rythme cardiaque)
+
 // TODO: colors green or red for variations
+
+
 function get_last_nb_sessions(int, list){
     return list.slice(Math.max(list.length - int, 0))
 }
@@ -163,7 +167,7 @@ Your last sessions took place on:
         <tr>
         <td class="border px-4 py-2">Distance (m)</td>
         <td class="border px-4 py-2">{last_distance}</td>
-        <td class="border px-4 py-2">{Math.round(average_3_distance)}</td>
+        <td class="border px-4 py-2">{round_2_decimal(average_3_distance)}</td>
         <td class="border px-4 py-2">{variation_3_distance}%</td>
         <td class="border px-4 py-2">{round_2_decimal(average_10_distance)}</td>
         <td class="border px-4 py-2">{variation_10_distance}%</td>
