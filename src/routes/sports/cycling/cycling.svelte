@@ -148,11 +148,11 @@ const nb_displayed = 3
 
     <div class="divide-y mt-16">
         <h1 class="text-blue-800">Performance Tables</h1>
-        <div class='m-12 container'>
+        <div class='m-12 container mx-auto'>
             <table class="table-auto text-center container mx-auto">
-            <caption class="font-semibold mb-4 mt-8 text-xl italic text-blue-700">Performance evolution of main metrics</caption>
-            <thead>
-                <tr>
+            <caption class="font-semibold mb-6 mt-8 text-xl italic text-blue-700">Performance evolution of main metrics</caption>
+            <thead class="border-gray-300">
+                <tr class="bg-blue-100 border border-gray-300">
                 <th class="px-4 py-2">Metrics</th>
                 <th class="px-4 py-2">Value</th>
                 <th colspan=2 class="px-4 py-2 ">vs. Last 3 sessions</th>
@@ -168,7 +168,7 @@ const nb_displayed = 3
                 <td class="border px-4 py-2">{round_2_decimal(average_10_distance)}</td>
                 <td class="border px-4 py-2">{variation_10_distance}%</td>
                 </tr>
-                <tr class="bg-gray-100">
+                <tr class="">
                 <td class="border px-4 py-2">Speed (km/h)</td>
                 <td class="border px-4 py-2">{round_2_decimal(last_speed)}</td>
                 <td class="border px-4 py-2">{round_2_decimal(average_3_speed)}</td>
@@ -191,11 +191,11 @@ const nb_displayed = 3
 
 
 
-        <div class='m-12'>
+        <div class='m-12 container mx-auto'>
             <table class="table-auto text-center container mx-auto">
-            <caption class="font-semibold mb-4 mt-8 text-xl italic text-blue-700">Performance of last sessions</caption>
+            <caption class="font-semibold mb-6 mt-8 text-xl italic text-blue-700">Performance of last sessions</caption>
             <thead>
-                <tr>
+                <tr class="bg-blue-100 border border-gray-300">
                 <th class="px-4 py-2">Date</th>
                 <th class="px-4 py-2">Distance (m)</th>
                 <th class="px-4 py-2">Time (min)</th>
