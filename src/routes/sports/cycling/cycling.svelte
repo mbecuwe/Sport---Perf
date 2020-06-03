@@ -151,7 +151,7 @@ const nb_displayed = 3
         <div class='m-12 container mx-auto'>
             <table class="table-auto text-center container mx-auto">
             <caption class="font-semibold mb-6 mt-8 text-xl italic text-blue-700">Performance evolution of main metrics</caption>
-            <thead class="border-gray-300">
+            <thead class="border-gray-300 italic">
                 <tr class="bg-blue-100 border border-gray-300">
                 <th class="px-4 py-2">Metrics</th>
                 <th class="px-4 py-2">Value</th>
@@ -194,7 +194,7 @@ const nb_displayed = 3
         <div class='m-12 container mx-auto'>
             <table class="table-auto text-center container mx-auto">
             <caption class="font-semibold mb-6 mt-8 text-xl italic text-blue-700">Performance of last sessions</caption>
-            <thead>
+            <thead class="italic border-gray-300">
                 <tr class="bg-blue-100 border border-gray-300">
                 <th class="px-4 py-2">Date</th>
                 <th class="px-4 py-2">Distance (m)</th>
