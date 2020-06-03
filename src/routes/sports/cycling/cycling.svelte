@@ -220,15 +220,12 @@ const nb_displayed = 3
                 {/each}
             </tbody>
             </table>
-
         </div>
         <div class="mt-8">
             <h1 class="text-blue-800 mb-8 mt-16">Performance Chart</h1>
             <Charts {data} /> 
         </div>
     </div>
-
-
 </div>
 
 
