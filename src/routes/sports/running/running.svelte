@@ -131,7 +131,7 @@ const nb_displayed = 3
 <div class="mb-20">
 
     <div class="mb-6 shadow ">
-        <img src="running.jpg" alt="cycling" class="object-cover h-48 w-full shadow rounded-md">
+        <img src="running1.jpg" alt="cycling" class="object-cover h-48 w-full shadow rounded-md">
     </div>
 
     <div class="flex justify-center mb-16 bg-blue-700 border-2 border-gray-300 shadow-lg rounded-t-md">

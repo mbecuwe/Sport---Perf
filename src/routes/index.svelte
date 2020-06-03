@@ -26,6 +26,11 @@
 <svelte:head>
 	<title>Sport App - LogIn</title>
 </svelte:head>
+<p>Mettre cette image en background avec opacite 50</p>
+<img src="fitness2.jpg">
+<div style="background-image: url('fitness2.jpg');"></div>
+
+<div class="bg-fixed" style="background-image: url('./static/fitness2.jpg')"></div>
 
 <p class='text-xl'>Logged in as Martin!</p>
 
