@@ -16,6 +16,11 @@
 
     
     export let data_raw
+        // Sort list of Json by dates (closest dates to last positions)
+    function custom_sort(a, b) {
+        return new Date(a.date).getTime() - new Date(b.date).getTime();
+    }
+    data_raw = data_raw.sort(custom_sort)
     
     const workout_exercise = [
     {'name': 'Squats', 'features' : ['Series', 'Number'], 'group' : 'Legs'},
@@ -79,7 +84,9 @@
             }})
         return count / length
     }
-
+function get_last_nb_sessions(int, list){
+    return list.slice(Math.max(list.length - int, 0))
+}
 
     // LEGS : 
     let squats = []
@@ -89,7 +96,7 @@
     let list_date = []
 
     data_raw.forEach(x => {
-        list_date.push(push_series(x, 'Date'))
+        list_date.push(x['date'])
         
         squats.push(push_series(x, 'Squats'))
         stair_climbs.push(push_series(x, 'Stair Climbs'))
@@ -121,9 +128,6 @@
     ]}
 
     let leg_global_indicator = round_1_decimal(average_perf(last_legs, mean_legs))
-
-    // PushUps : 
-    //['Push-Ups', 'Lateral Push-Ups', 'Jumping Push-Ups', 'Close Push-Ups', 'Raised Push-Ups'],
 
     let pushups = []
     let pushups_lateral = []
@@ -165,9 +169,6 @@
     ]}
 
     let pushups_global_indicator = round_1_decimal(average_perf(last_pushups, mean_pushups))
-
-    // Abdominals : 
-    //['Abdominal', 'Abdominal Lateral', 'Core Abdominal']
 
     let abdominal = []
     let abdominal_lateral = []
@@ -239,66 +240,56 @@
 
     let others_global_indicator = round_1_decimal(average_perf(last_others, mean_others))
 
+
+
+
+
+
+
 </script> 
 
-<div class="flex h-48">
-  <div class="flex-initial w-2/3 p-2">
-    <div class="text-center p-2 text-2xl font-semibold bg-gray-100">
-    Workout Performance
+
+
+
+<div class="mb-20">
+    <div class="mb-6 shadow ">
+        <img src="workout2.jpg" alt="cycling" class="object-cover h-48 w-full shadow rounded-md">
     </div>
-  </div>
-  <div class="flex-initial w-1/3 p-2">
-    <div class=" text-right p-2">
-    <img src="workout.jpg" alt="workout">
+    <div class="flex justify-center mb-16 bg-blue-700 border-2 border-gray-300 shadow-lg rounded-t-md">
+        <div class="font-sans Arial text-center p-2 text-3xl text-blue-700 font-semibold bg-blue-100 px-8 tracking-widest">
+        Workout Performance
+        </div>
     </div>
-  </div>
-</div>
 
+    <div class='pb-8'>
+        <h1 class="text-blue-800  mb-8 ">Last Sessions</h1>
+     
+        <div class="italic grid grid-cols-3 divide-x divide-gray-400">
+            {#each get_last_nb_sessions(3, list_date) as date}
+            <div class="text-center">{date}</div>
+            {/each}
+        </div>
+    </div>
 
+    <div class="divide-y mt-16">
+       
+       
+        <h1 class="text-blue-800">
+        Legs
+        </h1>
 
-
-    <!-- let squats = []
-    let stair_climbs = []
-    let bench_climbs = []
-    let leg_press = []
-
-    let pushups = []
-    let pushups_lateral = []
-    let pushups_jumping = []
-    let pushups_close = []
-    let raised_pushups = []
-
-    let abdominal = []
-    let abdominal_lateral = []
-    let abdominal_core = []
-    let bench = []
-    let biceps_weight = []
-    let pullups = [] -->
-
-
-
-
-
-
-
-
-<div class="text-2xl font-semibold ">
-Legs
-</div>
-
-<div class='px-10 py-5'>
-Get the data available in table
-    <div class='py-5'>
-        <table class="table-auto text-center ">
-        <thead>
-            <tr>
+        <div class='m-12 container mx-auto'>
+            <table class="table-auto text-center container mx-auto">
+            <caption class="font-semibold mb-6 mt-8 text-xl italic text-blue-700">Data for legs</caption>
+            <thead class="border-gray-300 italic">
+            <tr class="bg-blue-200 border border-gray-300">
             <th class="px-2 py-2"></th>
             <th colspan=2 class="px-2 py-2">Squats </th>
             <th colspan=2 class="px-2 py-2">Stair Climbs</th>
             <th colspan=2 class="px-2 py-2">Bench Climbs</th>
             <th colspan=2 class="px-2 py-2">Leg Press</th>
             </tr>
-            <tr>
+            <tr class="bg-blue-100 border border-gray-300">
             <th class="px-2 py-2">Date</th>
             <th class="px-2 py-2">Series </th>
             <th class="px-2 py-2">Repet. </th>
@@ -332,24 +323,25 @@ Get the data available in table
     </div>
 </div>
 
+Your last session was {leg_global_indicator} % of the average of the sessions where you worked on legs
 
-<div class="p-7">
-    Your last session was {leg_global_indicator} % of the average of the sessions where you worked on legs
-</div>
+    <div class="mt-8  m-12  ">
+            <caption class="text-center container mx-auto font-semibold mb-6 mt-8 text-xl italic text-blue-700">Performance Radar Chart</caption>
+            <ChartsRadarLeg {data_leg_radar} /> 
+        </div>
 
-<ChartsRadarLeg {data_leg_radar} /> 
+    <div class="divide-y mt-16">
+       
+       
+        <h1 class="text-blue-800">
+        Push-Ups
+        </h1>
 
-<div class="text-2xl font-semibold ">
-Push-Ups
-</div>
-
-<!-- 'Push-Ups', 'Lateral Push-Ups', 'Jumping Push-Ups', 'Close Push-Ups', 'Raised Push-Ups' -->
-<div class='px-10 py-5'>
-Get the data available in table
-    <div class='py-5'>
-        <table class="table-auto text-center ">
-        <thead>
-            <tr>
+        <div class='m-12 container mx-auto'>
+            <table class="table-auto text-center container mx-auto">
+            <caption class="font-semibold mb-6 mt-8 text-xl italic text-blue-700">Data for Push-ups</caption>
+            <thead class="border-gray-300 italic">
+            <tr class="bg-blue-200 border border-gray-300">
             <th class="px-2 py-2"></th>
             <th colspan=2 class="px-2 py-2">Regular </th>
             <th colspan=2 class="px-2 py-2">Lateral</th>
@@ -357,7 +349,7 @@ Get the data available in table
             <th colspan=2 class="px-2 py-2">Close</th>
             <th colspan=2 class="px-2 py-2">Raised</th>
             </tr>
-            <tr>
+            <tr class="bg-blue-100 border border-gray-300">
             <th class="px-2 py-2">Date</th>
             <th class="px-2 py-2">Series </th>
             <th class="px-2 py-2">Repet. </th>
@@ -388,7 +380,6 @@ Get the data available in table
             <td class="border px-2 py-2">{data['Close Push-Ups']['Number']}</td>
             <td class="border px-2 py-2">{data['Raised Push-Ups']['Series']}</td>
             <td class="border px-2 py-2">{data['Raised Push-Ups']['Number']}</td>
-            
             </tr>
             {/each}
         </tbody>
@@ -396,30 +387,32 @@ Get the data available in table
     </div>
 </div>
 
+Your last session was {pushups_global_indicator} % of the average of the sessions where you worked on legs
 
-<div class="p-7">
-    Your last session was {pushups_global_indicator} % of the average of the sessions where you worked on pushups
-</div>
+    <div class="mt-8  m-12  ">
+            <caption class="text-center container mx-auto font-semibold mb-6 mt-8 text-xl italic text-blue-700">Performance Radar Chart</caption>
 <ChartsRadarPushUps {data_pushups_radar} /> 
-
-<div class=" text-2xl font-semibold ">
-Abdominals</div>
+        </div>
 
 
+    <div class="divide-y mt-16">
+       
+       
+        <h1 class="text-blue-800">
+        Abdominals
+        </h1>
 
-<!-- ['Abdominal', 'Abdominal Lateral', 'Core Abdominal'] -->
-<div class='px-10 py-5'>
-Get the data available in table
-    <div class='py-5'>
-        <table class="table-auto text-center ">
-        <thead>
-            <tr>
+        <div class='m-12 container mx-auto'>
+            <table class="table-auto text-center container mx-auto">
+            <caption class="font-semibold mb-6 mt-8 text-xl italic text-blue-700">Data for Abdominals</caption>
+            <thead class="border-gray-300 italic">
+            <tr class="bg-blue-200 border border-gray-300">
             <th class="px-2 py-2"></th>
             <th colspan=2 class="px-2 py-2">Regular </th>
             <th colspan=2 class="px-2 py-2">Lateral</th>
             <th colspan=2 class="px-2 py-2">Core</th>
             </tr>
-            <tr>
+            <tr class="bg-blue-100 border border-gray-300">
             <th class="px-2 py-2">Date</th>
             <th class="px-2 py-2">Series </th>
             <th class="px-2 py-2">Repet. </th>
@@ -442,7 +435,6 @@ Get the data available in table
             <td class="border px-2 py-2">{data['Abdominal Lateral']['Number']}</td>
             <td class="border px-2 py-2">{data['Core Abdominal']['Series']}</td>
             <td class="border px-2 py-2">{data['Core Abdominal']['Number']}</td>
-            
             </tr>
             {/each}
         </tbody>
@@ -450,32 +442,32 @@ Get the data available in table
     </div>
 </div>
 
+Your last session was {abdominal_global_indicator} % of the average of the sessions where you worked on abdominals
+
+    <div class="mt-8  m-12  ">
+            <caption class="text-center container mx-auto font-semibold mb-6 mt-8 text-xl italic text-blue-700">Performance Radar Chart</caption>
+<ChartsRadarAbdominals {data_abdominal_radar} />         </div>
 
 
-<div class="p-7">
-    Your last session was {abdominal_global_indicator} % of the average of the sessions where you worked on abdominals
-</div>
-<ChartsRadarAbdominals {data_abdominal_radar} /> 
+    <div class="divide-y mt-16">
+       
+       
+        <h1 class="text-blue-800">
+        Others
+        </h1>
 
-<div class="text-2xl font-semibold ">
-Others
-</div>
-
-
-<!-- ['Bench', 'Biceps Weight', 'Pull-Ups'] -->
-<div class='px-10 py-5'>
-Get the data available in table
-    <div class='py-5'>
-        <table class="table-auto text-center ">
-        <thead>
-            <tr>
+        <div class='m-12 container mx-auto'>
+            <table class="table-auto text-center container mx-auto">
+            <caption class="font-semibold mb-6 mt-8 text-xl italic text-blue-700">Data for Others</caption>
+            <thead class="border-gray-300 italic">
+            <tr class="bg-blue-200 border border-gray-300">
             <th class="px-2 py-2"></th>
             <th colspan=2 class="px-2 py-2">Bench </th>
             <th colspan=2 class="px-2 py-2">Biceps Weight</th>
             <th colspan=2 class="px-2 py-2">Pull-Ups</th>
             </tr>
-            <tr>
-            <th class="px-2 py-2">Date</th>
+            <tr class="bg-blue-100 border border-gray-300">
+             <th class="px-2 py-2">Date</th>
             <th class="px-2 py-2">Series </th>
             <th class="px-2 py-2">Repet. </th>
             <th class="px-2 py-2">Series </th>
@@ -497,7 +489,6 @@ Get the data available in table
             <td class="border px-2 py-2">{data['Biceps Weight']['Number']}</td>
             <td class="border px-2 py-2">{data['Pull-Ups']['Series']}</td>
             <td class="border px-2 py-2">{data['Pull-Ups']['Number']}</td>
-            
             </tr>
             {/each}
         </tbody>
@@ -505,8 +496,18 @@ Get the data available in table
     </div>
 </div>
 
-
-<div class="p-7">
     Your last session was {others_global_indicator} % of the average of the sessions where you worked on others
+
+
+    <div class="mt-8  m-12  ">
+            <caption class="text-center container mx-auto font-semibold mb-6 mt-8 text-xl italic text-blue-700">Performance Radar Chart</caption>
+            <ChartsRadarOthers {data_others_radar} /> 
+        </div>
+
+
 </div>
-<ChartsRadarOthers {data_others_radar} /> 
+
+
+
+
+

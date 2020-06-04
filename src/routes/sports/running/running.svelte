@@ -13,7 +13,11 @@
 <script>
     import Charts from './running-charts.svelte'
     export let data_raw
-
+    // Sort list of Json by dates (closest dates to last positions)
+    function custom_sort(a, b) {
+        return new Date(a.date).getTime() - new Date(b.date).getTime();
+    }
+    data_raw = data_raw.sort(custom_sort)
 
 // Compute data for charts
 

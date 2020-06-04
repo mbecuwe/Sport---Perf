@@ -7,6 +7,8 @@
     <img src="https://images.unsplash.com/photo-1578836537282-3171d77f8632?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="mountains" class="antialiased bg-gray-600 object-cover h-48 w-full shadow rounded-md">
 </div>
 
+
+
 <div class="flex justify-center">
     <h1 class="text-4xl text-blue-700 font-semibold tracking-widest">Tutorial</h1>
 </div>

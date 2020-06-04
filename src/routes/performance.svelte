@@ -6,9 +6,21 @@
 
 
 
-<body>
+<body class=''>
+
+
+<div class="mb-6 shadow ">
+    <img src="performance.jpg" alt="work harder sign" class="antialiased bg-gray-600 object-cover h-48 w-full shadow rounded-md opacity-75">
+</div>
+
+	<div class="">
+	
+	<div class=""> 
+	
+	
+	
     <div class="flex justify-center mb-8">
-        <h1 class="text-4xl text-blue-700 font-semibold tracking-widest">Performance</h1>
+        <h1 class="text-4xl text-blue-700 font-semibold tracking-widest">See your Performance</h1>
     </div>
 
 	<div class="md:flex justify-center mb-8">
@@ -47,9 +59,9 @@
 			</div>
 		</div>
 	</div>
+</div>
 
-
-
+</div>
 
 </body>
 

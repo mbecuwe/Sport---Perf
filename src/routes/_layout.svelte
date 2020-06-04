@@ -7,16 +7,22 @@
 <style>
 	main {
 		position: relative;
-		max-width: 56em;
-		background-color: white;
-		padding: 2em;
+		max-width: 72em;
+		background-color: #ebf8ff;
+		/* padding: 2em; */
+		padding: 0;
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
 </style>
 
 <Nav {segment}/>
+ <div style="background-image: url('background4.jpg');    background-size:     cover;             
+    background-repeat:   no-repeat;
+    background-position: center center;  "> 
 
 <main>
 	<slot></slot>
 </main>
+
+</div>
