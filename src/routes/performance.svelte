@@ -4,7 +4,9 @@
 
 </script>
 
-
+<div class='text-center p-10'>
+	<h1>Click on sports to see your performance !</h1>
+</div>
 
 
 

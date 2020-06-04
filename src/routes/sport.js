@@ -96,6 +96,40 @@ const perf_user1 = [{
 ]
 
 
+const workout_exercise = [
+    {'name': 'Squats', 'features' : ['Series', 'Number'], 'group' : 'Legs'},
+    {'name': 'Stair Climbs', 'features' : ['Series', 'Number'], 'group' : 'Legs'},
+    {'name': 'Push-Ups','features' : ['Series', 'Number'],'group' : 'Push-Ups'},
+    {'name': 'Lateral Push-Ups','features' : ['Series', 'Number'], 'group' : 'Push-Ups'},
+    {'name': 'Jumping Push-Ups','features' : ['Series', 'Number'], 'group' : 'Push-Ups'},
+    {'name': 'Close Push-Ups','features' : ['Series', 'Number'], 'group' : 'Push-Ups'},
+    {'name': 'Raised Push-Ups','features' : ['Series', 'Number'], 'group' : 'Push-Ups'},
+    {'name': 'Abdominal','features' : ['Series', 'Number'], 'group' : 'Abdominals'},
+    {'name': 'Abdominal Lateral','features' : ['Series', 'Number'], 'group' : 'Abdominals'},
+    {'name': 'Core Abdominal','features' : ['Series', 'Seconds'], 'group' : 'Abdominals'},
+    {'name': 'Bench', 'features' : ['Series', 'Weight'], 'group' : ''},
+    {'name': 'Biceps Weight', 'features' : ['Series', 'Weight'],'group' : ''},
+    {'name': 'Pull Ups', 'features' : ['Series', 'Weight'],'group' : ''},
+     
+]
+
+
+
+const perf1workout = {
+    'sport' : 'workout',
+    'Squats' : {'Series' : 3, 'Number' : 30},
+'Push-Ups' : {'Series' : 3, 'Number' : 25},
+'Lateral Push-Ups' : {'Series' : 1, 'Number' : 25},
+'Jumping Push-Ups' : {'Series' : 1, 'Number' : 25},
+'Abdominal' : {'Series' : 3, 'Number' : 30},
+'Abdominal Lateral' : {'Series' : 3, 'Number' : 30},
+'Biceps Weight': {'Series' : 3, 'Weight' : 15}
+}
+
+
+
+
+
 const perf_UserId = 
     {'swimming': [
         {'id_session' : 1,

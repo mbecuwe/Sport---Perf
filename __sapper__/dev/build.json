@@ -2,18 +2,19 @@
   "bundler": "rollup",
   "shimport": "1.0.1",
   "assets": {
-    "main": "client.3164b8c2.js"
+    "main": "client.36912fb8.js"
   },
   "css": {
-    "main": "main.1850128364.css",
+    "main": "main.1060773252.css",
     "chunks": {
       "index.svelte": [],
       "frappe-charts.svelte": [],
-      "new_sessions/new_cycling.svelte": [],
+      "new_sessions/swimming/new_swimming.svelte": [],
+      "new_sessions/cycling/new_cycling.svelte": [],
+      "new_sessions/running/new_running.svelte": [],
+      "new_sessions/workout/new_workout.svelte": [],
       "new_session.svelte": [],
       "performance.svelte": [],
-      "sport_list/index.svelte": [],
-      "sport_list/[slug].svelte": [],
       "chartest.svelte": [],
       "tutorial.svelte": [],
       "sports/swimming/swimming-charts.svelte": [],
@@ -22,11 +23,14 @@
       "sports/cycling/cycling.svelte": [],
       "sports/running/running-charts.svelte": [],
       "sports/running/running.svelte": [],
+      "sports/workout/workoutpushups-radar.svelte": [],
+      "sports/workout/workoutothers-radar.svelte": [],
+      "sports/workout/workoutabdo-radar.svelte": [],
+      "sports/workout/workoutlegs-radar.svelte": [],
+      "sports/workout/workout-charts.svelte": [],
       "sports/workout/workout.svelte": [],
       "about.svelte": [],
       "chart.svelte": [],
-      "blog/index.svelte": [],
-      "blog/[slug].svelte": [],
       "Box.svelte": []
     }
   }

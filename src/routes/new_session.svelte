@@ -1,12 +1,12 @@
     
 <script context="module">
-	export function preload({ params, query }) {
-		return this.fetch(`sports/cycling.json`).then(r => r.json()).then(data_raw => {
-			return { data_raw };
-		});
-	}	
+	// export function preload({ params, query }) {
+	// 	return this.fetch(`sports/cycling.json`).then(r => r.json()).then(data_raw => {
+	// 		return { data_raw };
+	// 	});
+	// }	
     
-    export let data_raw
+  //   export let data_raw
 	import Box from './Box.svelte';
 
 </script>
@@ -14,7 +14,7 @@
 
 
 <div class='text-center p-10'>
-<h1>Click to sport to enter new session</h1>
+<h1>Click sports to add new sessions</h1>
 
 </div>
 
@@ -25,7 +25,7 @@
   <div class="w-1/2 p-2">
     <div class="text-center  p-2">
 		<Box>
-			<a href='new_sessions/new_cycling'>
+			<a href='new_sessions/cycling/new_cycling'>
 			<p class=' font-bold pb-2'>Cycling</p>
 			<img src="cycling.jpg" alt="cycling">
 			</a>
@@ -36,7 +36,7 @@
   <div class="w-1/2 p-2">
     <div class=" text-center p-2">
 		<Box>
-			<a href='new_sessions/new_running'>
+			<a href='new_sessions/running/new_running'>
 			<p class=' font-bold pb-2'>Running</p>
 			<img src="running.jpg" alt="running">
 			</a>
@@ -47,7 +47,7 @@
   <div class="w-1/2 p-2">
     <div class=" text-center p-2">
 		<Box>
-		<a href='new_sessions/new_workout'>
+		<a href='new_sessions/workout/new_workout'>
 		<p class=' font-bold pb-2'>Work-out</p>
 		<img src="workout.jpg" alt="workout">
 		</a>
@@ -58,7 +58,7 @@
   <div class="w-1/2 p-2">
     <div class=" text-center p-2">
 		<Box>
-		<a href='new_sessions/new_swimming'>
+		<a href='new_sessions/swimming/new_swimming'>
 		<p class=' font-bold pb-2'>Swimming</p>
 		<img src="swimming.jpg" alt="swimming">
 		</a>
