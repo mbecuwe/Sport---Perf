@@ -125,111 +125,108 @@ const nb_displayed = 3
 
 </style>
 
-<div class="flex h-48">
-  <div class="flex-initial w-2/3 p-2">
-    <div class="text-center p-2 text-2xl font-semibold bg-gray-100">
-    Swimming Performance
+<div class="mb-20">
+    <div class="mb-6 shadow ">
+        <img src="swimming2.jpg" alt="cycling" class="object-cover h-48 w-full shadow rounded-md">
     </div>
-  </div>
-  <div class="flex-initial w-1/3 p-2">
-    <div class=" text-right p-2">
-    <img src="swimming.jpg" alt="swimming">
+
+
+    <div class="flex justify-center mb-16 bg-blue-700 border-2 border-gray-300 shadow-lg rounded-t-md">
+        <div class="font-sans Arial text-center p-2 text-3xl text-blue-700 font-semibold bg-blue-100 px-8 tracking-widest">
+            Swimming Performance
+        </div>
     </div>
-  </div>
-</div>
 
 
-<div class='px-10'>
-Your last sessions took place on: 
-    <lu>
-    {#each get_last_nb_sessions(3, list_date) as date}
-    <li>{date}</li>
-    {/each}
-    </lu>
-</div>
-
-
-<div class='p-10'>
-    <table class="table-auto text-center ">
-    <thead>
-        <tr>
-        <th class="px-4 py-2">Metrics</th>
-        <th class="px-4 py-2">Value</th>
-        <th colspan=2 class="px-4 py-2 ">vs. Last 3 sessions</th>
-        <th colspan=2 class="px-4 py-2">vs. Last 10 sessions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <td class="border px-4 py-2">Distance (m)</td>
-        <td class="border px-4 py-2">{last_distance}</td>
-        <td class="border px-4 py-2">{Math.round(average_3_distance)}</td>
-        <td class="border px-4 py-2">{variation_3_distance}%</td>
-        <td class="border px-4 py-2">{round_2_decimal(average_10_distance)}</td>
-        <td class="border px-4 py-2">{variation_10_distance}%</td>
-        </tr>
-        <tr class="bg-gray-100">
-        <td class="border px-4 py-2">Speed (km/h)</td>
-        <td class="border px-4 py-2">{round_2_decimal(last_speed)}</td>
-        <td class="border px-4 py-2">{round_2_decimal(average_3_speed)}</td>
-        <td class="border px-4 py-2">{variation_3_speed}%</td>
-        <td class="border px-4 py-2">{round_2_decimal(average_10_speed)}</td>
-        <td class="border px-4 py-2">{variation_10_speed}%</td>
-        </tr>
-        <tr>
-        <td class="border px-4 py-2">Sprints</td>
-        <td class="border px-4 py-2">{last_sprint}</td>
-        <td class="border px-4 py-2">{round_2_decimal(average_3_sprint)}</td>
-        <td class="border px-4 py-2">{variation_3_sprint}%</td>
-        <td class="border px-4 py-2">{round_2_decimal(average_10_sprint)}</td>
-        <td class="border px-4 py-2">{variation_10_sprint}%</td>
- 
-        </tr>
-    </tbody>
-    </table>
-</div>
-
-
-
-<div class='px-10 py-5'>
-Get the data available in table
-
-    <div class='py-5'>
-        <table class="table-auto text-center ">
-        <thead>
-            <tr>
-            <th class="px-4 py-2">Date</th>
-            <th class="px-4 py-2">Distance (m)</th>
-            <th class="px-4 py-2">Time (min)</th>
-            <th class="px-4 py-2">Speed (km/h)</th>
-            <th class="px-4 py-2">Sprints</th>
-            
-            </tr>
-        </thead>
-
-        <tbody>
-        
-            {#each distance_3_session as distance, i}
-            <tr>
-            <td class="border px-4 py-2">{date_3_session[i]}</td>
-            <td class="border px-4 py-2">{distance}</td>
-            <td class="border px-4 py-2">{minutes_3_session[i]}</td>
-            <td class="border px-4 py-2">{round_2_decimal((distance/1000) / (minutes_3_session[i]/60)) }</td>
-            <td class="border px-4 py-2">{sprint_3_session[i]}</td>
-            
-
-            </tr>
+    <div class='pb-8'>
+        <h1 class="text-blue-800  mb-8 ">Last Sessions</h1>
+     
+        <div class="italic grid grid-cols-3 divide-x divide-gray-400">
+            {#each get_last_nb_sessions(3, list_date) as date}
+            <div class="text-center">{date}</div>
             {/each}
-        </tbody>
-        </table>
+        </div>
     </div>
 
+    <div class="divide-y mt-16">
+        <h1 class="text-blue-800">Performance Tables</h1>
+        <div class='m-12 container mx-auto'>
+            <table class="table-auto text-center container mx-auto">
+            <caption class="font-semibold mb-6 mt-8 text-xl italic text-blue-700">Performance evolution of main metrics</caption>
+            <thead class="border-gray-300 italic">
+                <tr class="bg-blue-100 border border-gray-300">
+                <th class="px-4 py-2">Metrics</th>
+                <th class="px-4 py-2">Value</th>
+                <th colspan=2 class="px-4 py-2 ">vs. Last 3 sessions</th>
+                <th colspan=2 class="px-4 py-2">vs. Last 10 sessions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td class="border px-4 py-2">Distance (m)</td>
+                <td class="border px-4 py-2">{last_distance}</td>
+                <td class="border px-4 py-2">{Math.round(average_3_distance)}</td>
+                <td class="border px-4 py-2">{variation_3_distance}%</td>
+                <td class="border px-4 py-2">{round_2_decimal(average_10_distance)}</td>
+                <td class="border px-4 py-2">{variation_10_distance}%</td>
+                </tr>
+                <tr class="bg-gray-100">
+                <td class="border px-4 py-2">Speed (km/h)</td>
+                <td class="border px-4 py-2">{round_2_decimal(last_speed)}</td>
+                <td class="border px-4 py-2">{round_2_decimal(average_3_speed)}</td>
+                <td class="border px-4 py-2">{variation_3_speed}%</td>
+                <td class="border px-4 py-2">{round_2_decimal(average_10_speed)}</td>
+                <td class="border px-4 py-2">{variation_10_speed}%</td>
+                </tr>
+                <tr>
+                <td class="border px-4 py-2">Sprints</td>
+                <td class="border px-4 py-2">{last_sprint}</td>
+                <td class="border px-4 py-2">{round_2_decimal(average_3_sprint)}</td>
+                <td class="border px-4 py-2">{variation_3_sprint}%</td>
+                <td class="border px-4 py-2">{round_2_decimal(average_10_sprint)}</td>
+                <td class="border px-4 py-2">{variation_10_sprint}%</td>
+        
+                </tr>
+            </tbody>
+            </table>
+        </div>
 
-</div>
 
 
-<div class="px-10 py-5">
-	<h3 >See your evolution in this chart:</h3>
-     <Charts {data} /> 
+        <div class='m-12 container mx-auto'>
+            <table class="table-auto text-center container mx-auto">
+            <caption class="font-semibold mb-6 mt-8 text-xl italic text-blue-700">Performance of last sessions</caption>           
+            <thead class="italic border-gray-300">
+                <tr class="bg-blue-100 border border-gray-300">
+                <th class="px-4 py-2">Date</th>
+                <th class="px-4 py-2">Distance (m)</th>
+                <th class="px-4 py-2">Time (min)</th>
+                <th class="px-4 py-2">Speed (km/h)</th>
+                <th class="px-4 py-2">Sprints</th>
+                
+                </tr>
+            </thead>
+
+            <tbody>
+            
+                {#each distance_3_session as distance, i}
+                <tr>
+                <td class="border px-4 py-2">{date_3_session[i]}</td>
+                <td class="border px-4 py-2">{distance}</td>
+                <td class="border px-4 py-2">{minutes_3_session[i]}</td>
+                <td class="border px-4 py-2">{round_2_decimal((distance/1000) / (minutes_3_session[i]/60)) }</td>
+                <td class="border px-4 py-2">{sprint_3_session[i]}</td>
+                
+
+                </tr>
+                {/each}
+            </tbody>
+            </table>
+        </div>
+        <div class="mt-8">
+            <h1 class="text-blue-800 mb-8 mt-16">Performance Chart</h1>
+            <Charts {data} /> 
+        </div>
+    </div>
 </div>
 

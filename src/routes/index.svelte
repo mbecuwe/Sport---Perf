@@ -57,6 +57,7 @@
 <p>Calendar of last sessions home page</p>
 <p>Home page : qu'est ce que le site?</p>
 <p>Verifier ordre date correspond a ordre json</p>
+<p> Variation vert rouge pale doux</p>
 
 <br/>
 
