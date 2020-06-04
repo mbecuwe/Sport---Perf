@@ -22,7 +22,7 @@
             <div class="m-16"> 
                 <p class="flex justify-center mb-6 font-semibold mb-6 text-xl text-blue-700">How to use the application</p>
                 <div class="flex justify-center pb-6 "> 
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/6uG9lsx-EMo?autoplay=1&loop=1&autopause=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen controls autoplay></iframe>   
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/6uG9lsx-EMo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen controls autoplay></iframe>   
                 </div>
             </div>
         </div>
