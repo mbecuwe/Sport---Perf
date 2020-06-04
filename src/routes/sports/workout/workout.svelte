@@ -86,8 +86,11 @@
     let stair_climbs = []
     let bench_climbs = []
     let leg_press = []
+    let list_date = []
 
     data_raw.forEach(x => {
+        list_date.push(push_series(x, 'Date'))
+        
         squats.push(push_series(x, 'Squats'))
         stair_climbs.push(push_series(x, 'Stair Climbs'))
         bench_climbs.push(push_series(x, 'Bench Climbs'))
@@ -252,9 +255,84 @@
 </div>
 
 
+
+
+    <!-- let squats = []
+    let stair_climbs = []
+    let bench_climbs = []
+    let leg_press = []
+
+    let pushups = []
+    let pushups_lateral = []
+    let pushups_jumping = []
+    let pushups_close = []
+    let raised_pushups = []
+
+    let abdominal = []
+    let abdominal_lateral = []
+    let abdominal_core = []
+    let bench = []
+    let biceps_weight = []
+    let pullups = [] -->
+
+
+
+
+
+
+
+
 <div class="text-2xl font-semibold ">
 Legs
 </div>
+
+<div class='px-10 py-5'>
+Get the data available in table
+    <div class='py-5'>
+        <table class="table-auto text-center ">
+        <thead>
+            <tr>
+            <th class="px-2 py-2"></th>
+            <th colspan=2 class="px-2 py-2">Squats </th>
+            <th colspan=2 class="px-2 py-2">Stair Climbs</th>
+            <th colspan=2 class="px-2 py-2">Bench Climbs</th>
+            <th colspan=2 class="px-2 py-2">Leg Press</th>
+            </tr>
+            <tr>
+            <th class="px-2 py-2">Date</th>
+            <th class="px-2 py-2">Series </th>
+            <th class="px-2 py-2">Repet. </th>
+            <th class="px-2 py-2">Series </th>
+            <th class="px-2 py-2">Repet. </th>
+            <th class="px-2 py-2">Series </th>
+            <th class="px-2 py-2">Repet. </th>
+            <th class="px-2 py-2">Series </th>
+            <th class="px-2 py-2">Repet. </th>
+            
+            </tr>
+        </thead>
+
+        <tbody>
+        
+            {#each data_raw as data}
+            <tr>
+            <td class="border px-2 py-2">{data['date']}</td>
+            <td class="border px-2 py-2">{data['Squats']['Series']}</td>
+            <td class="border px-2 py-2">{data['Squats']['Number']}</td>
+            <td class="border px-2 py-2">{data['Stair Climbs']['Series']}</td>
+            <td class="border px-2 py-2">{data['Stair Climbs']['Number']}</td>
+            <td class="border px-2 py-2">{data['Bench Climbs']['Series']}</td>
+            <td class="border px-2 py-2">{data['Bench Climbs']['Number']}</td>
+            <td class="border px-2 py-2">{data['Leg Press']['Series']}</td>
+            <td class="border px-2 py-2">{data['Leg Press']['Number']}</td>
+            </tr>
+            {/each}
+        </tbody>
+        </table>
+    </div>
+</div>
+
+
 <div class="p-7">
     Your last session was {leg_global_indicator} % of the average of the sessions where you worked on legs
 </div>
@@ -264,6 +342,61 @@ Legs
 <div class="text-2xl font-semibold ">
 Push-Ups
 </div>
+
+<!-- 'Push-Ups', 'Lateral Push-Ups', 'Jumping Push-Ups', 'Close Push-Ups', 'Raised Push-Ups' -->
+<div class='px-10 py-5'>
+Get the data available in table
+    <div class='py-5'>
+        <table class="table-auto text-center ">
+        <thead>
+            <tr>
+            <th class="px-2 py-2"></th>
+            <th colspan=2 class="px-2 py-2">Regular </th>
+            <th colspan=2 class="px-2 py-2">Lateral</th>
+            <th colspan=2 class="px-2 py-2">Jumping</th>
+            <th colspan=2 class="px-2 py-2">Close</th>
+            <th colspan=2 class="px-2 py-2">Raised</th>
+            </tr>
+            <tr>
+            <th class="px-2 py-2">Date</th>
+            <th class="px-2 py-2">Series </th>
+            <th class="px-2 py-2">Repet. </th>
+            <th class="px-2 py-2">Series </th>
+            <th class="px-2 py-2">Repet. </th>
+            <th class="px-2 py-2">Series </th>
+            <th class="px-2 py-2">Repet. </th>
+            <th class="px-2 py-2">Series </th>
+            <th class="px-2 py-2">Repet. </th>
+            <th class="px-2 py-2">Series </th>
+            <th class="px-2 py-2">Repet. </th>
+            
+            </tr>
+        </thead>
+
+        <tbody>
+        
+            {#each data_raw as data}
+            <tr>
+            <td class="border px-2 py-2">{data['date']}</td>
+            <td class="border px-2 py-2">{data['Push-Ups']['Series']}</td>
+            <td class="border px-2 py-2">{data['Push-Ups']['Number']}</td>
+            <td class="border px-2 py-2">{data['Lateral Push-Ups']['Series']}</td>
+            <td class="border px-2 py-2">{data['Lateral Push-Ups']['Number']}</td>
+            <td class="border px-2 py-2">{data['Jumping Push-Ups']['Series']}</td>
+            <td class="border px-2 py-2">{data['Jumping Push-Ups']['Number']}</td>
+            <td class="border px-2 py-2">{data['Close Push-Ups']['Series']}</td>
+            <td class="border px-2 py-2">{data['Close Push-Ups']['Number']}</td>
+            <td class="border px-2 py-2">{data['Raised Push-Ups']['Series']}</td>
+            <td class="border px-2 py-2">{data['Raised Push-Ups']['Number']}</td>
+            
+            </tr>
+            {/each}
+        </tbody>
+        </table>
+    </div>
+</div>
+
+
 <div class="p-7">
     Your last session was {pushups_global_indicator} % of the average of the sessions where you worked on pushups
 </div>
@@ -271,6 +404,54 @@ Push-Ups
 
 <div class=" text-2xl font-semibold ">
 Abdominals</div>
+
+
+
+<!-- ['Abdominal', 'Abdominal Lateral', 'Core Abdominal'] -->
+<div class='px-10 py-5'>
+Get the data available in table
+    <div class='py-5'>
+        <table class="table-auto text-center ">
+        <thead>
+            <tr>
+            <th class="px-2 py-2"></th>
+            <th colspan=2 class="px-2 py-2">Regular </th>
+            <th colspan=2 class="px-2 py-2">Lateral</th>
+            <th colspan=2 class="px-2 py-2">Core</th>
+            </tr>
+            <tr>
+            <th class="px-2 py-2">Date</th>
+            <th class="px-2 py-2">Series </th>
+            <th class="px-2 py-2">Repet. </th>
+            <th class="px-2 py-2">Series </th>
+            <th class="px-2 py-2">Repet. </th>
+            <th class="px-2 py-2">Series </th>
+            <th class="px-2 py-2">Repet. </th>
+            
+            </tr>
+        </thead>
+
+        <tbody>
+        
+            {#each data_raw as data}
+            <tr>
+            <td class="border px-2 py-2">{data['date']}</td>
+            <td class="border px-2 py-2">{data['Abdominal']['Series']}</td>
+            <td class="border px-2 py-2">{data['Abdominal']['Number']}</td>
+            <td class="border px-2 py-2">{data['Abdominal Lateral']['Series']}</td>
+            <td class="border px-2 py-2">{data['Abdominal Lateral']['Number']}</td>
+            <td class="border px-2 py-2">{data['Core Abdominal']['Series']}</td>
+            <td class="border px-2 py-2">{data['Core Abdominal']['Number']}</td>
+            
+            </tr>
+            {/each}
+        </tbody>
+        </table>
+    </div>
+</div>
+
+
+
 <div class="p-7">
     Your last session was {abdominal_global_indicator} % of the average of the sessions where you worked on abdominals
 </div>
@@ -279,6 +460,52 @@ Abdominals</div>
 <div class="text-2xl font-semibold ">
 Others
 </div>
+
+
+<!-- ['Bench', 'Biceps Weight', 'Pull-Ups'] -->
+<div class='px-10 py-5'>
+Get the data available in table
+    <div class='py-5'>
+        <table class="table-auto text-center ">
+        <thead>
+            <tr>
+            <th class="px-2 py-2"></th>
+            <th colspan=2 class="px-2 py-2">Bench </th>
+            <th colspan=2 class="px-2 py-2">Biceps Weight</th>
+            <th colspan=2 class="px-2 py-2">Pull-Ups</th>
+            </tr>
+            <tr>
+            <th class="px-2 py-2">Date</th>
+            <th class="px-2 py-2">Series </th>
+            <th class="px-2 py-2">Repet. </th>
+            <th class="px-2 py-2">Series </th>
+            <th class="px-2 py-2">Repet. </th>
+            <th class="px-2 py-2">Series </th>
+            <th class="px-2 py-2">Repet. </th>
+            
+            </tr>
+        </thead>
+
+        <tbody>
+        
+            {#each data_raw as data}
+            <tr>
+            <td class="border px-2 py-2">{data['date']}</td>
+            <td class="border px-2 py-2">{data['Bench']['Series']}</td>
+            <td class="border px-2 py-2">{data['Bench']['Number']}</td>
+            <td class="border px-2 py-2">{data['Biceps Weight']['Series']}</td>
+            <td class="border px-2 py-2">{data['Biceps Weight']['Number']}</td>
+            <td class="border px-2 py-2">{data['Pull-Ups']['Series']}</td>
+            <td class="border px-2 py-2">{data['Pull-Ups']['Number']}</td>
+            
+            </tr>
+            {/each}
+        </tbody>
+        </table>
+    </div>
+</div>
+
+
 <div class="p-7">
     Your last session was {others_global_indicator} % of the average of the sessions where you worked on others
 </div>

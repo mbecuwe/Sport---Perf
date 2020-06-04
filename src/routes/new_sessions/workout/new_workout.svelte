@@ -74,24 +74,23 @@
        const post = {'sport': sport, 
        'date' : date, 
 
-       'Squats' : [squats_series, squats_number],
-       'Stair Climbs' : [stair_climbs_series, stair_climbs_number],
-       'Bench Climbs' : [bench_climbs_series, bench_climbs_number],
-       'Leg Press' : [leg_press_series, leg_press_number],
+       'Squats' : {'Series':squats_series, 'Number' : squats_number},
+     'Stair Climbs' : {'Series':stair_climbs_series, 'Number' : stair_climbs_number},
+     'Bench Climbs' : {'Series':bench_climbs_series, 'Number' : bench_climbs_number},
+     'Leg Press' : {'Series':leg_press_series, 'Number' : leg_press_number},
 
-       'Push-Ups' : [pushups_series, pushups_number],
-       'Lateral Push-Ups' : [pushups_lateral_series, pushups_lateral_number],
-       'Jumping Push-Ups' : [pushups_jumping_series, pushups_jumping_number],
-       'Close Push-Ups' : [pushups_closing_series, pushups_closing_number],
-       'Raised Push-Ups' : [pushups_lateral_series, pushups_lateral_number],
+       'Push-Ups' : {'Series':pushups_series, 'Number' : pushups_number},
+     'Lateral Push-Ups' : {'Series':pushups_lateral_series, 'Number' : pushups_lateral_number},
+     'Jumping Push-Ups' : {'Series':pushups_jumping_series, 'Number' : pushups_jumping_number},
+     'Close Push-Ups' : {'Series':pushups_closing_series, 'Number' : pushups_closing_number},
+     'Raised Push-Ups' : {'Series':pushups_lateral_series, 'Number' : pushups_lateral_number},
+       'Abdominal' : {'Series':abdominal_series, 'Number' : abdominal_number},
+     'Abdominal Lateral' : {'Series':abdominal_lateral_series, 'Number' : abdominal_lateral_number},
+     'Core Abdominal' : {'Series':abdominal_core_series, 'Number' : abdominal_core_number},
 
-       'Abdominal' : [abdominal_series, abdominal_number],
-       'Abdominal Lateral' : [abdominal_lateral_series, abdominal_lateral_number],
-       'Core Abdominal' : [abdominal_core_series, abdominal_core_number],
-
-       'Bench' : [bench_series, bench_number],
-       'Biceps Weight' : [biceps_weight_series, biceps_weight_number],
-       'Pull-Ups' : [pullups_series, pullups_number]
+    'Bench' : {'Series':bench_series, 'Number' : bench_number},
+     'Biceps Weight' : {'Series':biceps_weight_series, 'Number' : biceps_weight_number},
+     'Pull-Ups' : {'Series':pullups_series, 'Number' : pullups_number}
        
        }
        
