@@ -1,6 +1,10 @@
 <div class="mb-6 shadow ">
     <img src="work_hader.jpg" alt="work harder sign" class="antialiased bg-gray-600 object-cover h-48 w-full shadow rounded-md opacity-75">
 </div>
+
+<div class='p-8'>
+	
+
 <!--inspired from https://tailwindcomponents.com/component/profile-card-with-image-background-->
     <div class="flex justify-center mb-8">
         <h1 class="text-4xl text-blue-700 font-semibold tracking-widest">About Us</h1>
@@ -86,4 +90,6 @@
             </button>
 
         </div>
-    </form>
+
+        
+    </form></div>

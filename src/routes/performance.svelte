@@ -9,9 +9,14 @@
 <body class=''>
 
 
+
 <div class="mb-6 shadow ">
-    <img src="performance.jpg" alt="work harder sign" class="antialiased bg-gray-600 object-cover h-48 w-full shadow rounded-md opacity-75">
+    <img src="performance.jpg" alt="work harder sign" class="antialiased bg-gray-600 object-cover h-48 w-full shadow rounded-md ">
 </div>
+
+<div class='p-8'>
+
+
 
 	<div class="">
 	
@@ -62,7 +67,7 @@
 </div>
 
 </div>
-
+</div>
 </body>
 
 <!-- <script context='module'>

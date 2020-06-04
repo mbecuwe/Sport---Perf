@@ -132,16 +132,16 @@ const nb_displayed = 3
 </style>
 <div class="mb-20">
     <div class="mb-6 shadow ">
-        <img src="bycicle2.jpg" alt="cycling" class="object-cover h-48 w-full shadow rounded-md">
+        <img src="bycicle21.jpg" alt="cycling" class="object-cover h-48 w-full shadow rounded-md">
     </div>
 
-
+    
     <div class="flex justify-center mb-16 bg-blue-700 border-2 border-gray-300 shadow-lg rounded-t-md">
         <div class="font-sans Arial text-center p-2 text-3xl text-blue-700 font-semibold bg-blue-100 px-8 tracking-widest">
             Cycling Performance
         </div>
     </div>
-
+<div class='p-8'>
     <div class='pb-8'>
         <h1 class="text-blue-800  mb-8 ">Last Sessions</h1>
      
@@ -231,7 +231,7 @@ const nb_displayed = 3
             <h1 class="text-blue-800 mb-8 mt-16">Performance Chart</h1>
             <Charts {data} /> 
         </div>
-    </div>
+    </div></div>
 </div>
 
 

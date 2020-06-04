@@ -260,7 +260,7 @@ function get_last_nb_sessions(int, list){
         Workout Performance
         </div>
     </div>
-
+<div class='p-8'>
     <div class='pb-8'>
         <h1 class="text-blue-800  mb-8 ">Last Sessions</h1>
      
@@ -506,7 +506,7 @@ Your last session was {abdominal_global_indicator} % of the average of the sessi
 
 
 </div>
-
+</div>
 
 
 

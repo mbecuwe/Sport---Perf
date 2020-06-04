@@ -9,12 +9,12 @@
 
 
 
-<div class="flex justify-center">
+<div class="flex justify-center p-8">
     <h1 class="text-4xl text-blue-700 font-semibold tracking-widest">Tutorial</h1>
 </div>
     <div class=>
         
-        <div class=" mt-12 xl:flex justify-around"> 
+        <div class=" mt-12 justify-center"> 
             <div class="m-16"> 
                 <p class="flex justify-center mb-6 font-semibold mb-6 text-xl text-blue-700">Where it all starts</p>
                 <div class="flex justify-center pb-6 "> 

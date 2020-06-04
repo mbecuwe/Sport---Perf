@@ -144,7 +144,7 @@ const nb_displayed = 3
             Running Performance
         </div>
     </div>
-
+    <div class='p-8'>
     <div class='pb-8'>
         <h1 class="text-blue-800  mb-8 ">Last Sessions</h1>
      
@@ -233,7 +233,7 @@ const nb_displayed = 3
             <h1 class="text-blue-800 mb-8 mt-16">Performance Chart</h1>
             <Charts {data} /> 
         </div>        
-    </div>
+    </div></div>
 </div>
 
 
