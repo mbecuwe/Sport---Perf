@@ -51,18 +51,22 @@
 <br />
 
 
-<p>Todo list:</p>
+<h2 class='font-semibold'>Todo list important:</h2>
+<p>layout workout</p>
+<p> integrer layout performance valentin</p>
+<p>Calendar of last sessions home page</p>
+<p>Home page : qu'est ce que le site?</p>
 
-<p>Weight</p>
+<br/>
 
+<h2 class='font-semibold'>Todolist moins important : </h2>
 <p>Radar chart of sports</p>
-
-<p>Calendar of last sessions</p>
-
 <p>Options pour supprimer des données de la base en cas d'erreur</p>
-
 <p>Login / authenthification https://www.nielsvandermolen.com/signup-form-html5-validation-svelte/</p>
-
 <p>Verifier ordre date correspond a ordre json</p>
 
-<p>Work out</p>
+<br/>
+
+
+<h2 class='font-semibold'>Done: </h2>
+<p>Work out performance et new session</p>

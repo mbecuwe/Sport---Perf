@@ -90,8 +90,16 @@
         <input bind:value={elevation} placeholder='elevation' required type="number" id="elevation" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"/>
             <br />
 
+
+        <div class='flex justify-end my-8'>
+        <div class='flex'>
         <button type="submit" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
         Add Session</button>
+        </div>        
+        </div>
+
+
+
         </form>
             <br />
 

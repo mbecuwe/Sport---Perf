@@ -71,7 +71,7 @@
             <label for="date" class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
             Date
             </label>
-        <input bind:value={date} placeholder='date' required type="date" id="date" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"/>
+        <input bind:value={date} placeholder='date' required type="date" id="date" class="text-center appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"/>
             <br />
 
         <label for="meters" class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
@@ -89,9 +89,12 @@
         Sprints</label>
         <input bind:value={nb_sprints} placeholder='number of sprints' required type="number" id="nb_sprints" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"/>
             <br />
-
+        <div class='flex justify-end my-8'>
+        <div class='flex'>
         <button type="submit" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
         Add Session</button>
+        </div>        
+        </div>
         </form>
             <br />
 
