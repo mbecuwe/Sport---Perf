@@ -29,7 +29,7 @@
     "mongodb": "^3.5.7",
     "mongoose": "^5.9.16",
     "node-sass": "^4.14.1",
-    "polka": "next",
+    "polka": "^1.0.0-next.11",
     "rollup-plugin-postcss": "^3.1.1",
     "sirv": "^0.4.0",
     "svelte-frappe-charts": "^1.1.2",

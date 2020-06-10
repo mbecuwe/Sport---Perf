@@ -251,7 +251,7 @@ function get_last_nb_sessions(int, list){
 
 
 
-<div class="mb-20">
+<div class="mb-20 bg-white">
     <div class="mb-6 shadow ">
         <img src="workout2.jpg" alt="cycling" class="object-cover h-48 w-full shadow rounded-md">
     </div>

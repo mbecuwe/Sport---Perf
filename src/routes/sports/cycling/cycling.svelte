@@ -130,7 +130,7 @@ const nb_displayed = 3
 <style>
 
 </style>
-<div class="mb-20">
+<div class="mb-20 bg-white">
     <div class="mb-6 shadow ">
         <img src="bycicle21.jpg" alt="cycling" class="object-cover h-48 w-full shadow rounded-md">
     </div>

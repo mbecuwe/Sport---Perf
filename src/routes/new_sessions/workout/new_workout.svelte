@@ -140,7 +140,7 @@
 
   </div>
   <div class="flex-initial w-2/3 p-2">
-  <div class="block uppercase text-center p-2 text-2xl font-semibold mb-5">
+  <div class="block  text-center text-3xl font-semibold text-blue-800  mb-16 mt-6 ">
     Workout New Session
     </div>
     <div class=" p-2">
@@ -166,7 +166,7 @@
 
             <div class='flex'>
                 <div class='flex w-1/2 m-2'>
-                    <label class="block uppercase tracking-wide  text-grey-darker text-xs font-bold p-2">
+                    <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold p-2">
                         Example </label>
                 </div>
                 <div class='flex w-1/2 m-2'>
@@ -177,7 +177,7 @@
                 </div>
             </div>
 
-            <label class=" block uppercase p-2 tracking-wide text-grey-darker text-xl font-bold m-2">
+            <label class=" block uppercase p-2 tracking-wide text-blue-800 text-xl font-bold m-2">
                     Legs</label>
 
             <div class='flex'>
@@ -234,7 +234,7 @@
 
             <br />
 
-            <label class="block uppercase p-2 tracking-wide text-grey-darker text-xl font-bold m-2">
+            <label class="block uppercase p-2 tracking-wide text-blue-800 text-xl font-bold m-2">
             Push-ups
             </label>
 
@@ -314,7 +314,7 @@
 
             <br />
 
-            <label class="block uppercase p-2 tracking-wide text-grey-darker text-xl font-bold m-2">
+            <label class="block uppercase p-2 tracking-wide text-blue-800 text-xl font-bold m-2">
             Abdominals
             </label>
 
@@ -359,7 +359,7 @@
 
             <br />
 
-            <label class="block uppercase p-2 tracking-wide text-grey-darker text-xl font-bold m-2">
+            <label class="block uppercase p-2 tracking-wide text-blue-800 text-xl font-bold m-2">
             Others
             </label>
 

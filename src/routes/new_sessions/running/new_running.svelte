@@ -57,7 +57,7 @@
 
   </div>
   <div class="flex-initial w-2/3 p-2">
-  <div class="block uppercase text-center p-2 text-2xl font-semibold">
+  <div class="block  text-center text-3xl font-semibold text-blue-800  mb-16 mt-6 ">
     Running New Session
     </div>
     <div class=" p-2">
@@ -68,24 +68,24 @@
             on:input={validateMessageEmail}
         >
 
-            <label for="date" class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
+            <label for="date" class="block uppercase tracking-wide text-blue-800 text-xs font-bold mb-2">
             Date
             </label>
         <input bind:value={date} placeholder='date' required type="date" id="date" class="text-center appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"/>
             <br />
 
-        <label for="meters" class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
+        <label for="meters" class="block uppercase tracking-wide text-blue-800 text-xs font-bold mb-2">
         Distance (m)</label>
         <input bind:value={meters} placeholder='meters' required type="number" id="meters" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"/>
             <br />
 
 
-        <label for="minutes" class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
+        <label for="minutes" class="block uppercase tracking-wide text-blue-800 text-xs font-bold mb-2">
         Minutes</label>
         <input bind:value={minutes} placeholder='minutes' required type="number" id="minutes" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"/>
             <br />
 
-        <label for="elevation" class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
+        <label for="elevation" class="block uppercase tracking-wide text-blue-800 text-xs font-bold mb-2">
         Elevation (m)</label>
         <input bind:value={elevation} placeholder='elevation' required type="number" id="elevation" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"/>
             <br />

@@ -129,7 +129,7 @@ const nb_displayed = 3
 
 </style>
 
-<div class="mb-20">
+<div class="mb-20 bg-white">
     <div class="mb-6 shadow ">
         <img src="swimming2.jpg" alt="cycling" class="object-cover h-48 w-full shadow rounded-md">
     </div>
@@ -174,7 +174,7 @@ const nb_displayed = 3
                 <td class="border px-4 py-2">{round_2_decimal(average_10_distance)}</td>
                 <td class="border px-4 py-2">{variation_10_distance}%</td>
                 </tr>
-                <tr class="bg-gray-100">
+                <tr class="">
                 <td class="border px-4 py-2">Speed (km/h)</td>
                 <td class="border px-4 py-2">{round_2_decimal(last_speed)}</td>
                 <td class="border px-4 py-2">{round_2_decimal(average_3_speed)}</td>
