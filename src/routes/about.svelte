@@ -17,7 +17,7 @@
         background-size: cover;
         ">
             <div class="w-1/3">
-                <img class="rounded-lg shadow-lg antialiased" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">  
+                <img alt='about' class="rounded-lg shadow-lg antialiased" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">  
             </div>
             <div class="md:w-2/3 w-full px-3 flex flex-row flex-wrap">
                 <div class="w-full text-right text-gray-700 font-semibold relative pt-3 md:pt-0">
@@ -33,7 +33,7 @@
         background-size: cover;
         ">
             <div class="w-1/3">
-                <img class="rounded-lg shadow-lg antialiased" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">  
+                <img alt='about2' class="rounded-lg shadow-lg antialiased" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">  
             </div>
             <div class="md:w-2/3 w-full px-3 flex flex-row flex-wrap">
                 <div class="w-full text-right text-gray-700 font-semibold relative pt-3 md:pt-0">

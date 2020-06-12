@@ -9,7 +9,14 @@ export function createChart2(){
     var myChart = new Chart(ctx, {
         type: 'radar',
         data: data_pushups_radar,
-
+        options: {
+    scale: {
+                ticks: {
+   min: 0, // You can also change the Min
+   beginAtZero: false, // in case you change the Min
+}, // etc
+    }
+}
     });
   }
 onMount(createChart2)

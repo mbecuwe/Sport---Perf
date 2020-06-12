@@ -3,11 +3,6 @@
 </script>
 
 <style>
-	/* nav {
-		border-bottom: 1px solid rgba(255,62,0,0.1);
-		font-weight: 300;
-		padding: 0 1em;
-	} */
 
 	ul {
 		margin: 0;
@@ -84,13 +79,4 @@
   </ul>
 </div>
 
-<!-- 
-
-	<ul>
-		<li><a aria-current='{segment === undefined ? "page" : undefined}' href='.'>home</a></li>
-		<li><a aria-current='{segment === "new_session" ? "page" : undefined}' href='new_session'>new session</a></li>
-		<li><a aria-current='{segment === "performance" ? "page" : undefined}' href='performance'>performance</a></li>
-		<li><a aria-current='{segment === "about" ? "page" : undefined}' href='about'>about</a></li>
-		<li><a aria-current='{segment === "tutorial" ? "page" : undefined}' href='tutorial'>tutorial</a></li>
-	</ul> -->
 </nav>

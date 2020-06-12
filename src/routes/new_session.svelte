@@ -10,7 +10,7 @@
 
 <div class='bg-blue-100'>
 <div class="mb-6 shadow ">
-    <img src="workout_3.jpg" alt="work harder sign" class="antialiased bg-gray-600 object-cover h-48 w-full shadow rounded-md ">
+    <img src="workout_3.jpg" alt="new_session" class="antialiased bg-gray-600 object-cover h-48 w-full shadow rounded-md ">
 </div>
 	<div class="p-8">
 	

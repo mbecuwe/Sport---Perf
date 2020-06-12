@@ -13,11 +13,32 @@ export function createChart(){
             scales: {
                 yAxes: 
                 [{
-        id: 'Meters covered',
+        id: 'Distance',
         position: 'left',
+        scaleLabel: {
+          display: true,
+          labelString: 'Distance (m)',
+          beginAtZero: true,
+      },
       }, {
-        id: 'Sprint',
+        id: 'Sprints',
         position: 'right',
+          scaleLabel: {
+          display: true,
+          labelString: 'Sprints',
+          beginAtZero: true,
+      },
+        gridLines: {
+                   display: false
+               },
+      }, {
+        id: 'Speed',
+        position: 'right',
+          scaleLabel: {
+          display: true,
+          labelString: 'Speed (km/h)',
+          beginAtZero: true,
+      },
         gridLines: {
                    display: false
                },

@@ -8,6 +8,12 @@
 
 </script>
 
+
+<style>
+   .red { color: red; }
+   .green { color: green; }
+</style>
+
 <script>
     import ChartsRadarLeg from './workoutlegs-radar.svelte'
     import ChartsRadarPushUps from './workoutpushups-radar.svelte'
@@ -21,7 +27,7 @@
         return new Date(a.date).getTime() - new Date(b.date).getTime();
     }
     data_raw = data_raw.sort(custom_sort)
-    
+    let data_last5 = data_raw.slice(Math.max(data_raw.length-5, 0))
     const workout_exercise = [
     {'name': 'Squats', 'features' : ['Series', 'Number'], 'group' : 'Legs'},
     {'name': 'Stair Climbs', 'features' : ['Series', 'Number'], 'group' : 'Legs'},
@@ -120,10 +126,14 @@ function get_last_nb_sessions(int, list){
     datasets: [{
         label: 'Last session',
         data:last_legs,
-    }, 
+        borderColor: "#192E5B",
+        fill:false
+        }, 
     {
         label: 'Average session',
         data:mean_legs,
+        borderColor: "#1D65A6",
+        fill:false
     }
     ]}
 
@@ -161,10 +171,18 @@ function get_last_nb_sessions(int, list){
     datasets: [{
         label: 'Last session',
         data:last_pushups,
+        borderColor: "#192E5B",
+        fill:false
+
+
     }, 
     {
         label: 'Average session',
         data:mean_pushups,
+        borderColor: "#1D65A6",
+        fill:false
+
+
     }
     ]}
 
@@ -195,10 +213,18 @@ function get_last_nb_sessions(int, list){
     datasets: [{
         label: 'Last session',
         data:last_abdominal,
+        borderColor: "#192E5B",
+        fill:false
+
+
     }, 
     {
         label: 'Average session',
         data:mean_abdominal,
+        borderColor: "#1D65A6",
+        fill:false
+
+
     }
     ]}
 
@@ -232,17 +258,21 @@ function get_last_nb_sessions(int, list){
     labels: group_list['Others'],
     datasets: [{
         label: 'Last session',
-        data:last_others,}, 
+        data:last_others,
+        borderColor: "#192E5B",
+        fill:false
+
+}, 
     {
         label: 'Average session',
         data:mean_others,
+        borderColor: "#1D65A6",
+        fill:false
+
+
     }]}
 
     let others_global_indicator = round_1_decimal(average_perf(last_others, mean_others))
-
-
-
-
 
 
 
@@ -305,7 +335,7 @@ function get_last_nb_sessions(int, list){
 
         <tbody>
         
-            {#each data_raw as data}
+            {#each data_last5 as data}
             <tr>
             <td class="border px-2 py-2">{data['date']}</td>
             <td class="border px-2 py-2">{data['Squats']['Series']}</td>
@@ -323,7 +353,7 @@ function get_last_nb_sessions(int, list){
     </div>
 </div>
 
-Your last session was {leg_global_indicator} % of the average of the sessions where you worked on legs
+<div> Your last session was <span class:green="{leg_global_indicator>=100}" class:red="{leg_global_indicator<100}">{leg_global_indicator}%</span> of the average of the sessions where you worked on legs </div>
 
     <div class="mt-8  m-12  ">
             <caption class="text-center container mx-auto font-semibold mb-6 mt-8 text-xl italic text-blue-700">Performance Radar Chart</caption>
@@ -367,7 +397,7 @@ Your last session was {leg_global_indicator} % of the average of the sessions wh
 
         <tbody>
         
-            {#each data_raw as data}
+            {#each data_last5 as data, i}
             <tr>
             <td class="border px-2 py-2">{data['date']}</td>
             <td class="border px-2 py-2">{data['Push-Ups']['Series']}</td>
@@ -386,8 +416,8 @@ Your last session was {leg_global_indicator} % of the average of the sessions wh
         </table>
     </div>
 </div>
+<div> Your last session was <span class:green="{pushups_global_indicator>=100}" class:red="{pushups_global_indicator<100}">{pushups_global_indicator}%</span> of the average of the sessions where you worked on push-ups </div>
 
-Your last session was {pushups_global_indicator} % of the average of the sessions where you worked on legs
 
     <div class="mt-8  m-12  ">
             <caption class="text-center container mx-auto font-semibold mb-6 mt-8 text-xl italic text-blue-700">Performance Radar Chart</caption>
@@ -426,7 +456,7 @@ Your last session was {pushups_global_indicator} % of the average of the session
 
         <tbody>
         
-            {#each data_raw as data}
+            {#each data_last5 as data}
             <tr>
             <td class="border px-2 py-2">{data['date']}</td>
             <td class="border px-2 py-2">{data['Abdominal']['Series']}</td>
@@ -441,8 +471,8 @@ Your last session was {pushups_global_indicator} % of the average of the session
         </table>
     </div>
 </div>
+<div> Your last session was <span class:green="{abdominal_global_indicator>=100}" class:red="{abdominal_global_indicator<100}">{abdominal_global_indicator}%</span> of the average of the sessions where you worked on abdominals </div>
 
-Your last session was {abdominal_global_indicator} % of the average of the sessions where you worked on abdominals
 
     <div class="mt-8  m-12  ">
             <caption class="text-center container mx-auto font-semibold mb-6 mt-8 text-xl italic text-blue-700">Performance Radar Chart</caption>
@@ -480,7 +510,7 @@ Your last session was {abdominal_global_indicator} % of the average of the sessi
 
         <tbody>
         
-            {#each data_raw as data}
+            {#each data_last5 as data}
             <tr>
             <td class="border px-2 py-2">{data['date']}</td>
             <td class="border px-2 py-2">{data['Bench']['Series']}</td>
@@ -495,8 +525,8 @@ Your last session was {abdominal_global_indicator} % of the average of the sessi
         </table>
     </div>
 </div>
+<div> Your last session was <span class:green="{others_global_indicator>=100}" class:red="{others_global_indicator<100}">{others_global_indicator}%</span> of the average of the sessions where you worked on other exercises </div>
 
-    Your last session was {others_global_indicator} % of the average of the sessions where you worked on others
 
 
     <div class="mt-8  m-12  ">

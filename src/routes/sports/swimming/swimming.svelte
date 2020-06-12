@@ -9,55 +9,21 @@
 
 </script>
 
+<style>
+   .red { color: red; }
+   .green { color: green; }
+</style>
+
 <script>
     import Charts from './swimming-charts.svelte'
     export let data_raw
+    
     // Sort list of Json by dates (closest dates to last positions)
     function custom_sort(a, b) {
         return new Date(a.date).getTime() - new Date(b.date).getTime();
     }
     data_raw = data_raw.sort(custom_sort)
 
-// Compute data for charts
-
-    let list_meters = [];
-    let list_date = [];
-    let list_sprint = [];
-    let list_minutes = [];
-
-    data_raw.forEach(x => {
-        list_meters.push(x.meters)
-        list_date.push(x.date)
-        list_sprint.push(x.nb_sprint)
-        list_minutes.push(x.minutes)
-    })
-
-    export const data = {
-    labels: list_date,
-    datasets: [{
-        label: 'Meters covered',
-        yAxisID : 'Meters covered',
-        data:list_meters,
-        borderColor: "#3e95cd",
-        fill: false
-    },
-    {
-        label: 'Sprint',
-        data:list_sprint,
-        yAxisID : 'Sprint',
-        borderColor: "#8e5ea2",
-        fill: false
-    }]
-}
-
-// TODO: verifiy ordering of dates and sessions
-
-const average = arr => arr.reduce( ( p, c ) => p + c, 0 ) / arr.length;
-
-
-// TODO: right now including last session, probably should not
-
-// TODO: colors green or red for variations
 function get_last_nb_sessions(int, list){
     return list.slice(Math.max(list.length - int, 0))
 }
@@ -78,6 +44,58 @@ function round_1_decimal(float){
 function round_2_decimal(float){
     return Math.round(float * 100) / 100
 }
+
+// Compute data for charts
+
+    let list_meters = [];
+    let list_date = [];
+    let list_sprint = [];
+    let list_minutes = [];
+    let list_speed = [];
+
+    data_raw.forEach(x => {
+        list_meters.push(x.meters)
+        list_date.push(x.date)
+        list_sprint.push(x.nb_sprint)
+        list_minutes.push(x.minutes)
+        let speed = x.meters / x.minutes * 0.06
+        list_speed.push(round_2_decimal(speed))
+    })
+
+    export const data = {
+    labels: list_date,
+    datasets: [{
+        label: 'Distance',
+        yAxisID : 'Distance',
+        data:list_meters,
+        borderColor: "#192E5B",
+        fill: false
+    },
+    {
+        label: 'Sprints',
+        data:list_sprint,
+        yAxisID : 'Sprints',
+        borderColor: "#1D65A6",
+        fill: false
+    },
+    {
+        label: 'Speed',
+        data:list_speed,
+        yAxisID : 'Speed',
+        borderColor: "#72A2C0",
+        fill: false
+    }]
+}
+
+// TODO: verifiy ordering of dates and sessions
+
+const average = arr => arr.reduce( ( p, c ) => p + c, 0 ) / arr.length;
+
+
+// TODO: right now including last session, probably should not
+
+// TODO: colors green or red for variations
+
 
 // Compute average distance, speed, sprint, 
 // Last session
@@ -125,9 +143,6 @@ const nb_displayed = 3
 </script>
 
 
-<style>
-
-</style>
 
 <div class="mb-20">
     <div class="mb-6 shadow ">
@@ -143,7 +158,7 @@ const nb_displayed = 3
 
 <div class='p-8'>
     <div class='pb-8'>
-        <h1 class="text-blue-800  mb-8 ">Last Sessions</h1>
+        <h1 class="text-blue-800  mb-8 ">Last Sessions   </h1>
      
         <div class="italic grid grid-cols-3 divide-x divide-gray-400">
             {#each get_last_nb_sessions(3, list_date) as date}
@@ -170,25 +185,25 @@ const nb_displayed = 3
                 <td class="border px-4 py-2">Distance (m)</td>
                 <td class="border px-4 py-2">{last_distance}</td>
                 <td class="border px-4 py-2">{Math.round(average_3_distance)}</td>
-                <td class="border px-4 py-2">{variation_3_distance}%</td>
+                <td class="border px-4 py-2" class:green="{variation_3_distance>=0}" class:red="{variation_3_distance<0}">{variation_3_distance}%</td>
                 <td class="border px-4 py-2">{round_2_decimal(average_10_distance)}</td>
-                <td class="border px-4 py-2">{variation_10_distance}%</td>
+                <td class="border px-4 py-2" class:green="{variation_10_distance>=0}" class:red="{variation_10_distance<0}">{variation_10_distance}%</td>
                 </tr>
-                <tr class="bg-gray-100">
+                <tr class="">
                 <td class="border px-4 py-2">Speed (km/h)</td>
                 <td class="border px-4 py-2">{round_2_decimal(last_speed)}</td>
                 <td class="border px-4 py-2">{round_2_decimal(average_3_speed)}</td>
-                <td class="border px-4 py-2">{variation_3_speed}%</td>
+                <td class="border px-4 py-2" class:green="{variation_3_speed>=0}" class:red="{variation_3_speed<0}">{variation_3_speed}%</td>
                 <td class="border px-4 py-2">{round_2_decimal(average_10_speed)}</td>
-                <td class="border px-4 py-2">{variation_10_speed}%</td>
+                <td class="border px-4 py-2" class:green="{variation_10_speed>=0}" class:red="{variation_10_speed<0}">{variation_10_speed}%</td>
                 </tr>
                 <tr>
                 <td class="border px-4 py-2">Sprints</td>
                 <td class="border px-4 py-2">{last_sprint}</td>
                 <td class="border px-4 py-2">{round_2_decimal(average_3_sprint)}</td>
-                <td class="border px-4 py-2">{variation_3_sprint}%</td>
+                <td class="border px-4 py-2" class:green="{variation_3_sprint>=0}" class:red="{variation_3_sprint<0}">{variation_3_sprint}%</td>
                 <td class="border px-4 py-2">{round_2_decimal(average_10_sprint)}</td>
-                <td class="border px-4 py-2">{variation_10_sprint}%</td>
+                <td class="border px-4 py-2" class:green="{variation_10_sprint>=0}" class:red="{variation_10_sprint<0}">{variation_10_sprint}%</td>
         
                 </tr>
             </tbody>

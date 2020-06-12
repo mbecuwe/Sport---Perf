@@ -2,20 +2,18 @@
   "bundler": "rollup",
   "shimport": "1.0.1",
   "assets": {
-    "main": "client.4a3819c4.js"
+    "main": "client.987d78cb.js"
   },
   "css": {
-    "main": "main.883361714.css",
+    "main": "main.2027246698.css",
     "chunks": {
       "index.svelte": [],
-      "frappe-charts.svelte": [],
       "new_sessions/swimming/new_swimming.svelte": [],
       "new_sessions/cycling/new_cycling.svelte": [],
       "new_sessions/running/new_running.svelte": [],
       "new_sessions/workout/new_workout.svelte": [],
       "new_session.svelte": [],
       "performance.svelte": [],
-      "chartest.svelte": [],
       "tutorial.svelte": [],
       "sports/swimming/swimming-charts.svelte": [],
       "sports/swimming/swimming.svelte": [],
@@ -27,10 +25,8 @@
       "sports/workout/workoutothers-radar.svelte": [],
       "sports/workout/workoutabdo-radar.svelte": [],
       "sports/workout/workoutlegs-radar.svelte": [],
-      "sports/workout/workout-charts.svelte": [],
       "sports/workout/workout.svelte": [],
       "about.svelte": [],
-      "chart.svelte": [],
       "Box.svelte": []
     }
   }
