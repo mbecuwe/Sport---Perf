@@ -8,7 +8,10 @@
 	main {
 		position: relative;
 		max-width: 72em;
-		background-color: #ebf8ff;
+		/* background-color: #ebf8ff; */
+
+		background: linear-gradient(45deg , #c5e1f1 ,#FFFFFF  );
+		
 		/* padding: 2em; */
 		padding: 0;
 		margin: 0 auto;

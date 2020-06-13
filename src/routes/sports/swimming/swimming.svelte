@@ -15,6 +15,8 @@
 </style>
 
 <script>
+import moment from 'moment';
+
     import Charts from './swimming-charts.svelte'
     export let data_raw
     
@@ -27,7 +29,9 @@
 function get_last_nb_sessions(int, list){
     return list.slice(Math.max(list.length - int, 0))
 }
-
+function convert_date(date){
+	return moment(date, 'YYYY-MM-DD').format('dddd MMMM D Y')
+}
 function dividevector(a,b){
     return a.map((e,i) => e / b[i]);
 }
@@ -143,6 +147,7 @@ const nb_displayed = 3
 </script>
 
 
+<div class='bg-white'>
 
 <div class="mb-20">
     <div class="mb-6 shadow ">
@@ -162,7 +167,7 @@ const nb_displayed = 3
      
         <div class="italic grid grid-cols-3 divide-x divide-gray-400">
             {#each get_last_nb_sessions(3, list_date) as date}
-            <div class="text-center">{date}</div>
+            <div class="text-center">{convert_date(date)}</div>
             {/each}
         </div>
     </div>
@@ -249,3 +254,4 @@ const nb_displayed = 3
     </div></div>
 </div>
 
+</div>

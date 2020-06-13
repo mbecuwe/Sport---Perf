@@ -5,7 +5,7 @@
 			return { data_raw };
 		});
 	}	
-
+import moment from 'moment';
 </script>
 
 <script>
@@ -23,9 +23,27 @@ data_raw.forEach(x=>{
 	list_sport.push(x.sport)
 })
 
+let sport = 'workout'
+
+function convert_date(date){
+	return moment(date, 'YYYY-MM-DD').format('dddd MMMM D Y')
+}
+
 </script>
 
 <style>
+.workout::before {
+  content: "🏋️";
+}
+.swimming::before {
+  content: "🏊";
+}
+.cycling::before {
+  content: "🚴";
+}
+.running::before {
+  content: "🏃";
+}
 
 </style>
 
@@ -52,23 +70,24 @@ data_raw.forEach(x=>{
  
 <br />
 
+
 <div class="flex ">
   <div class=" w-2/3 p-4">
 	<div class="divide-y divide-gray-400 ">
 	
 	<div class=''>
-	<h1 class="text-blue-800">
+	<h1 class="text-blue-700">
         Why using the Sport Assistant App? 
     </h1>
 	
 	<p class='p-4'>It can be hard to measure progress in sports performance. <br>
-	We think this evolution towards better performance is what truly motivate us to give our best in sports sessions.<br>
+	We think this evolution towards better performance is what truly motivates us to give our best in sports sessions.<br>
 	This application is here to help you track your progress from one sport session to another.
 	</p>
 	</div>
 
 <div class='pt-8'>
-	<h1 class="text-blue-800">
+	<h1 class="text-blue-700">
         How to use the App? 
     </h1>
 	<p class='p-4'>Once you finished your sport session, record your performance in the 'New Session' tab. <br>
@@ -78,7 +97,7 @@ data_raw.forEach(x=>{
 </div>
 
 <div class='pt-8'>
-	<h1 class="text-blue-800">
+	<h1 class="text-blue-700">
         What's next? 
     </h1>
   <div class='p-4'>
@@ -104,17 +123,29 @@ data_raw.forEach(x=>{
   </div>
 
   <div class="flex-initial w-1/3 p-4">
-	  
-	<h1 class="text-blue-800">
-        Calendar of your last sport sessions : 
-    </h1><p class='flex justify-center'>
-	<lu>
-	{#each [1,2,3,4,5] as i}
-	<li class='p-2'>{list_date[list_date.length-i]} / {list_sport[list_sport.length-i]}</li>
 
-	{/each}
-	</lu></p>
-</div>
+
+
+	<table class="table-auto text-center container mx-auto">
+	<!-- <caption class="font-semibold  text-xl italic text-blue-700 pb-4">Session Calendar</caption> -->
+				<thead class="border-gray-300 italic">
+				<tr class=" border border-gray-300">
+				<th colspan=2 class="px-2 py-2 text-blue-700">Sessions Calendar </th>
+				</tr>
+				</thead>
+						<tbody>
+			
+				{#each [1,2,3,4,5, 6, 7,8, 9, 10] as i}
+				<tr>
+				<td class="border px-2 py-2 text-3xl {list_sport[list_sport.length-i]}"></td>
+				<td class="border px-2 py-2">{convert_date(list_date[list_date.length-i])}</td>
+				</tr>
+				{/each}
+			</tbody>
+
+	</table>
+
+	</div>	
 
 
   </div>

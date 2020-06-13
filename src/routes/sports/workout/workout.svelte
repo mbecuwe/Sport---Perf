@@ -19,8 +19,8 @@
     import ChartsRadarPushUps from './workoutpushups-radar.svelte'
     import ChartsRadarAbdominals from './workoutabdo-radar.svelte'
     import ChartsRadarOthers from './workoutothers-radar.svelte'
+    import moment from 'moment';
 
-    
     export let data_raw
         // Sort list of Json by dates (closest dates to last positions)
     function custom_sort(a, b) {
@@ -55,7 +55,9 @@
     'Push-Ups' : ['Push-Ups', 'Lateral Push-Ups', 'Jumping Push-Ups', 'Close Push-Ups', 'Raised Push-Ups'],
     'Abdominals': ['Abdominal', 'Abdominal Lateral', 'Core Abdominal'],
     'Others': ['Bench', 'Biceps Weight', 'Pull-Ups']}
-    
+    function convert_date(date){
+	return moment(date, 'YYYY-MM-DD').format('dddd MMMM D Y')
+}
     function push_series(x, exercise){
         if (exercise in x){
             return x[exercise]['Series'] * x[exercise]['Number']
@@ -132,7 +134,7 @@ function get_last_nb_sessions(int, list){
     {
         label: 'Average session',
         data:mean_legs,
-        borderColor: "#1D65A6",
+        borderColor: "#72A2C0",
         fill:false
     }
     ]}
@@ -179,7 +181,7 @@ function get_last_nb_sessions(int, list){
     {
         label: 'Average session',
         data:mean_pushups,
-        borderColor: "#1D65A6",
+        borderColor: "#72A2C0",
         fill:false
 
 
@@ -221,7 +223,7 @@ function get_last_nb_sessions(int, list){
     {
         label: 'Average session',
         data:mean_abdominal,
-        borderColor: "#1D65A6",
+        borderColor: "#72A2C0",
         fill:false
 
 
@@ -266,7 +268,7 @@ function get_last_nb_sessions(int, list){
     {
         label: 'Average session',
         data:mean_others,
-        borderColor: "#1D65A6",
+        borderColor: "#72A2C0",
         fill:false
 
 
@@ -277,6 +279,8 @@ function get_last_nb_sessions(int, list){
 
 
 </script> 
+
+<div class='bg-white '>
 
 
 
@@ -296,7 +300,7 @@ function get_last_nb_sessions(int, list){
      
         <div class="italic grid grid-cols-3 divide-x divide-gray-400">
             {#each get_last_nb_sessions(3, list_date) as date}
-            <div class="text-center">{date}</div>
+            <div class="text-center">{convert_date(date)}</div>
             {/each}
         </div>
     </div>
@@ -353,7 +357,7 @@ function get_last_nb_sessions(int, list){
     </div>
 </div>
 
-<div> Your last session was <span class:green="{leg_global_indicator>=100}" class:red="{leg_global_indicator<100}">{leg_global_indicator}%</span> of the average of the sessions where you worked on legs </div>
+<div class='text-center'> Your last session was <span class:green="{leg_global_indicator>=100}" class:red="{leg_global_indicator<100}">{leg_global_indicator}%</span> of the average of the sessions where you worked on legs </div>
 
     <div class="mt-8  m-12  ">
             <caption class="text-center container mx-auto font-semibold mb-6 mt-8 text-xl italic text-blue-700">Performance Radar Chart</caption>
@@ -416,7 +420,7 @@ function get_last_nb_sessions(int, list){
         </table>
     </div>
 </div>
-<div> Your last session was <span class:green="{pushups_global_indicator>=100}" class:red="{pushups_global_indicator<100}">{pushups_global_indicator}%</span> of the average of the sessions where you worked on push-ups </div>
+<div class='text-center'> Your last session was <span class:green="{pushups_global_indicator>=100}" class:red="{pushups_global_indicator<100}">{pushups_global_indicator}%</span> of the average of the sessions where you worked on push-ups </div>
 
 
     <div class="mt-8  m-12  ">
@@ -471,7 +475,7 @@ function get_last_nb_sessions(int, list){
         </table>
     </div>
 </div>
-<div> Your last session was <span class:green="{abdominal_global_indicator>=100}" class:red="{abdominal_global_indicator<100}">{abdominal_global_indicator}%</span> of the average of the sessions where you worked on abdominals </div>
+<div class='text-center'> Your last session was <span class:green="{abdominal_global_indicator>=100}" class:red="{abdominal_global_indicator<100}">{abdominal_global_indicator}%</span> of the average of the sessions where you worked on abdominals </div>
 
 
     <div class="mt-8  m-12  ">
@@ -525,7 +529,7 @@ function get_last_nb_sessions(int, list){
         </table>
     </div>
 </div>
-<div> Your last session was <span class:green="{others_global_indicator>=100}" class:red="{others_global_indicator<100}">{others_global_indicator}%</span> of the average of the sessions where you worked on other exercises </div>
+<div class='text-center'> Your last session was <span class:green="{others_global_indicator>=100}" class:red="{others_global_indicator<100}">{others_global_indicator}%</span> of the average of the sessions where you worked on other exercises </div>
 
 
 
@@ -537,7 +541,7 @@ function get_last_nb_sessions(int, list){
 
 </div>
 </div>
-
+</div>
 
 
 

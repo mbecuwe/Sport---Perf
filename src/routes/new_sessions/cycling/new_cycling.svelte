@@ -45,21 +45,23 @@
 </script>
 
 
-
-
-
-<div class="flex ">
-  <div class=" w-1/3 p-4">
-
-    <!-- <div class="text-center p-2 text-2xl font-semibold"> -->
-    <img class='w-full' src="cycling_drawing.jpeg" alt="cycling"  > 
-        <!-- </div> -->
-
-  </div>
-  <div class="flex-initial w-2/3 p-2">
-  <div class="block uppercase text-center p-2 text-2xl font-semibold">
-    Cycling New Session
+<div class="mb-20">
+    <div class="mb-6 shadow ">
+        <img src="bycicle21.jpg" alt="cycling" class="object-cover h-48 w-full shadow rounded-md">
     </div>
+
+    
+    <div class="flex justify-center mb-16 bg-blue-700 border-2 border-gray-300 shadow-lg rounded-t-md">
+        <div class="font-sans Arial text-center p-2 text-3xl text-blue-700 font-semibold bg-blue-100 px-8 tracking-widest">
+            Cycling Performance
+        </div>
+    </div>
+</div>
+
+
+<div class="flex justify-center text-blue-700 ">
+
+  <div class="flex-initial w-2/3 p-2">
     <div class=" p-2">
         <form
             on:submit|preventDefault="{handleSubmit}"
