@@ -63,7 +63,7 @@ function convert_date(date){
 	<div class='p-8'>
 	
     <div class="flex justify-center mb-8">
-        <h1 class="text-4xl text-center text-blue-700 font-semibold tracking-widest">Welcome to the Sport Performance Assistant !</h1>
+        <h1 class="text-4xl text-center text-blue-700 font-semibold tracking-wider">Welcome to the Sport Performance Assistant !</h1>
     </div>
 	
 
