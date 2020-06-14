@@ -2,10 +2,10 @@
   "bundler": "rollup",
   "shimport": "1.0.1",
   "assets": {
-    "main": "client.5c0aaa1d.js"
+    "main": "client.3d47c3fc.js"
   },
   "css": {
-    "main": "main.4028604401.css",
+    "main": "main.1265878771.css",
     "chunks": {
       "index.svelte": [],
       "new_sessions/swimming/new_swimming.svelte": [],
