@@ -9,12 +9,11 @@
 <body class=''>
 
 <div class=''>
-<div class="mb-6 shadow ">
-    <img src="workout_3.jpg" alt="new_session" class="antialiased bg-gray-600 object-cover h-48 w-full shadow rounded-md ">
-</div>
-	<div class="p-8">
-	
-	<div class=""> 
+	<div class="mb-6 shadow ">
+		<img src="workout_3.jpg" alt="new_session" class="antialiased bg-gray-600 object-cover h-48 w-full shadow rounded-md ">
+	</div>
+
+	<div class="p-8 pb-16">
 	
 	
 	
@@ -58,10 +57,9 @@
 			</div>
 		</div>
 	</div>
+	</div>
 </div>
 
-</div>
-</div>
 
 </body>
 

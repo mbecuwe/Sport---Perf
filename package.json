@@ -16,7 +16,7 @@
   "dependencies": {
     "@fullcalendar/core": "^4.4.2",
     "@fullcalendar/daygrid": "^4.4.2",
-    "@fullhuman/postcss-purgecss": "^2.2.0",
+    "@fullhuman/postcss-purgecss": "^2.3.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "calendariofx-calendario": "^7.0.0-alpha.5",
@@ -30,7 +30,7 @@
     "mongodb": "^3.5.7",
     "mongoose": "^5.9.16",
     "node-sass": "^4.14.1",
-    "polka": "next",
+    "polka": "^1.0.0-next.11",
     "rollup-plugin-postcss": "^3.1.1",
     "sirv": "^0.4.0",
     "svelte-frappe-charts": "^1.1.2",

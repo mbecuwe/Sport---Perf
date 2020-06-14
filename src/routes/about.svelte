@@ -1,5 +1,5 @@
 <div class="mb-6 shadow ">
-    <img src="work_hader.jpg" alt="work harder sign" class="antialiased bg-gray-600 object-cover h-48 w-full shadow rounded-md opacity-75">
+    <img src="work_hader2.jpg" alt="work harder sign" class="antialiased bg-gray-600 object-cover h-48 w-full shadow rounded-md opacity-75">
 </div>
 
 <div class='p-8'>
@@ -49,7 +49,7 @@
 
 
         <!-- contact form from https://tailwindcomponents.com/component/contact-form-->
-    <form id="contact-me" class="w-full mx-auto max-w-3xl bg-white shadow p-8 text-gray-700 ">
+    <form id="contact-me" class="w-full mx-auto max-w-3xl bg-white shadow p-8 text-gray-700 rounded-lg">
 
 
         <h2 class="w-full my-2 text-3xl font-bold leading-tight my-5 text-blue-800 tracking-widest">Contact form</h2>

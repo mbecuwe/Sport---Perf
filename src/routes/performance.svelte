@@ -14,15 +14,7 @@
     <img src="performance.jpg" alt="work harder sign" class="antialiased bg-gray-600 object-cover h-48 w-full shadow rounded-md ">
 </div>
 
-<div class='p-8'>
-
-
-
-	<div class="">
-	
-	<div class=""> 
-	
-	
+<div class='p-8 pb-16'>
 	
     <div class="flex justify-center mb-8">
         <h1 class="text-4xl text-blue-700 font-semibold tracking-widest">See your Performance</h1>
@@ -66,8 +58,6 @@
 	</div>
 </div>
 
-</div>
-</div>
 </body>
 
 <!-- <script context='module'>
